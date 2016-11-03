@@ -2,19 +2,21 @@ public class testGraph {
 
 	@SuppressWarnings({ "rawtypes" })
 	public static void main(String[] args) {
+		String ACREDITADO = "acreditado";
+		String CURSANDO = "acreditado";
+		String NO_ACREDITADO = "acreditado";
 		
-		WeightedGraph<gNode> graph1 = new WeightedGraph<gNode>();
+		WeightedGraph<gNode> system = new WeightedGraph<gNode>();
+		WeightedGraph<gNode> degree = new WeightedGraph<gNode>();
+		WeightedGraph<gNode> student = new WeightedGraph<gNode>();
 		
-		gNode<String> TC1001 = new gNode<String>("Introducción a la computación","Materia ISC 1",0);
-		gNode<String> TC1014 = new gNode<String>("Fundamentos de Programación","Materia ISC 2",1);
+		gNode SYTC1001 = new gNode("TC1001","Introducción a la Computación","info");
+		system.addVertex(SYTC1001);
 		
-		graph1.addVertex(TC1001);
-		graph1.addVertex(TC1014);
-		
-		graph1.addEdge(TC1001, TC1014, 1);
-		
-		System.out.println(TC1001.getInfo());
+		gNode DTC1001 = new gNode(0,"Introducción a la Computación","TC1001");
+		degree.addVertex(DTC1001);
 
+		
 	}
 
 }
