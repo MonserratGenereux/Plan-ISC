@@ -1,8 +1,4 @@
-//----------------------------------------------------------------------------
-// BSTNode.java               by Dale/Joyce/Weems                    Chapter 8
-//
-// Implements Comparable nodes for a binary search tree.
-//----------------------------------------------------------------------------
+
 
 
 public class gNode<T extends Comparable<T>>

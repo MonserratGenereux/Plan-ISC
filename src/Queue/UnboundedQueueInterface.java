@@ -1,4 +1,7 @@
 package Queue;
+
+
+
 //----------------------------------------------------------------------------
 // UnboundedQueueInterface.java       by Dale/Joyce/Weems            Chapter 5
 //
@@ -9,6 +12,6 @@ package Queue;
 public interface UnboundedQueueInterface<T> extends QueueInterface<T>
 
 {
-  void enqueue(T element);
+  void enqueue(T vertices);
   // Adds element to the rear of this queue.
 }

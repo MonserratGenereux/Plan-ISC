@@ -294,9 +294,9 @@ public class testGraph {
 		degree.addVertex(DTC3054);
 		gNode DH2006 = new gNode(9,"Ética Aplicada","H2006");
 		degree.addVertex(DH2006);
-		
+				
 	}
-		private static boolean isPath2(WeightedGraphInterface<String> graph, String startVertex, String endVertex)
+	private static boolean isPath2(WeightedGraphInterface<String> graph, String startVertex, String endVertex)
 
 	// Returns true if a path exists on graph, from startVertex to endVertex;
 	// otherwise returns false. Uses breadth-first search algorithm.
