@@ -286,14 +286,14 @@ public class testGraph {
 		degree.addVertex(DTC3049);
 		
 		//Semestre 9
-		gNode DTI3035 = new gNode(9,"Introducción a la Vida Profesional","TI3035");
-		degree.addVertex(DTI3035);
-		gNode DTC2011 = new gNode(9,"Sistemas Inteligentes","TC2011");
-		degree.addVertex(DTC2011);
-		gNode DTC3054 = new gNode(9,"Proyecto Integrador para el Desarrollo de Soluciones Empresariales","TC3054");
-		degree.addVertex(DTC3054);
-		gNode DH2006 = new gNode(9,"Ética Aplicada","H2006");
-		degree.addVertex(DH2006);
+				gNode DTI3035 = new gNode(9,"Introducción a la Vida Profesional","TI3035");
+				degree.addVertex(DTI3035);
+				gNode DTC2011 = new gNode(9,"Sistemas Inteligentes","TC2011");
+				degree.addVertex(DTC2011);
+				gNode DTC3054 = new gNode(9,"Proyecto Integrador para el Desarrollo de Soluciones Empresariales","TC3054");
+				degree.addVertex(DTC3054);
+				gNode DH2006 = new gNode(9,"Ética Aplicada","H2006");
+				degree.addVertex(DH2006);
 				
 	}
 	private static boolean isPath2(WeightedGraphInterface<String> graph, String startVertex, String endVertex)
