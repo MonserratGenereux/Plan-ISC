@@ -1,6 +1,7 @@
 package Queue;
 
 import Stack.LLNode;
+import planISC.gNode;
 
 //---------------------------------------------------------------------------
 // LinkedUnbndQueue.java         by Dale/Joyce/Weems                Chapter 5
@@ -9,8 +10,8 @@ import Stack.LLNode;
 //---------------------------------------------------------------------------
 
 public class LinkedUnbndQueue<T> implements UnboundedQueueInterface<T> {
-	protected LLNode<T> front; // reference to the front of this queue
-	protected LLNode<T> rear; // reference to the rear of this queue
+	protected LLNode<gNode> front; // reference to the front of this queue
+	protected LLNode<gNode> rear; // reference to the rear of this queue
 	int numElements;
 
 	public LinkedUnbndQueue() {
@@ -19,10 +20,10 @@ public class LinkedUnbndQueue<T> implements UnboundedQueueInterface<T> {
 		numElements = 0;
 	}
 
-	public void enqueue(T element)
+	public void enqueue(gNode element)
 	// Adds element to the rear of this queue.
 	{
-		LLNode<T> newNode = new LLNode<T>(element);
+		LLNode<gNode> newNode = new LLNode<gNode>(element);
 		if (rear == null)
 			front = newNode;
 		else
@@ -31,7 +32,7 @@ public class LinkedUnbndQueue<T> implements UnboundedQueueInterface<T> {
 		numElements = numElements + 1;
 	}
 
-	public T dequeue()
+	public gNode dequeue()
 	// Throws QueueUnderflowException if this queue is empty;
 	// otherwise, removes front element from this queue and returns it.
 	{
@@ -39,7 +40,7 @@ public class LinkedUnbndQueue<T> implements UnboundedQueueInterface<T> {
 			throw new QueueUnderflowException(
 					"Dequeue attempted on empty queue.");
 		else {
-			T element;
+			gNode element;
 			element = front.getInfo();
 			front = front.getLink();
 			if (front == null)

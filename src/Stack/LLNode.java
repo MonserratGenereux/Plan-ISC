@@ -5,25 +5,26 @@ package Stack;
 // Implements <T> nodes for a Linked List.
 //----------------------------------------------------------------------------
 
+import planISC.gNode;
 
 public class LLNode<T>
 {
   private LLNode<T> link;
-  private T info;
+  private gNode info;
   
-  public LLNode(T info)
+  public LLNode(gNode info)
   {
     this.info = info;
     link = null;
   }
  
-  public void setInfo(T info)
+  public void setInfo(gNode info)
   // Sets info of this LLNode.
   {
     this.info = info;
   }
 
-  public T getInfo()
+  public gNode getInfo()
   // Returns info of this LLONode.
   {
     return info;

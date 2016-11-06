@@ -1,5 +1,7 @@
 package Stack;
 
+import planISC.gNode;
+
 //----------------------------------------------------------------------
 // LinkedStack.java         by Dale/Joyce/Weems                Chapter 3
 //
@@ -16,15 +18,7 @@ public class LinkedStack<T> implements UnboundedStackInterface<T>
   {
     top = null;
   }
-
-  public void push(T element)
-  // Places element at the top of this stack.
-  { 
-    LLNode<T> newNode = new LLNode<T>(element);
-    newNode.setLink(top);
-    top = newNode;
-  }     
-
+   
   public void pop()
   // Throws StackUnderflowException if this stack is empty,
   // otherwise removes top element from this stack.
@@ -37,7 +31,7 @@ public class LinkedStack<T> implements UnboundedStackInterface<T>
       throw new StackUnderflowException("Pop attempted on an empty stack.");
   }
 
-  public T top()
+  public gNode top()
   // Throws StackUnderflowException if this stack is empty,
   // otherwise returns top element from this stack.
   {                 
@@ -55,5 +49,14 @@ public class LinkedStack<T> implements UnboundedStackInterface<T>
     else
       return false;
   }
+
+@Override
+public void push(gNode element) {
+	// TODO Auto-generated method stub
+    LLNode<T> newNode = new LLNode<T>(element);
+    newNode.setLink(top);
+    top = newNode;
+}
+
 }
 

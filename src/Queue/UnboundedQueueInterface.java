@@ -1,6 +1,6 @@
 package Queue;
 
-
+import planISC.gNode;
 
 //----------------------------------------------------------------------------
 // UnboundedQueueInterface.java       by Dale/Joyce/Weems            Chapter 5
@@ -12,6 +12,6 @@ package Queue;
 public interface UnboundedQueueInterface<T> extends QueueInterface<T>
 
 {
-  void enqueue(T vertices);
+  void enqueue(gNode dH2006);
   // Adds element to the rear of this queue.
 }

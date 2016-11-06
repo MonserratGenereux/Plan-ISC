@@ -6,11 +6,12 @@ package Stack;
 // on the size of the stack. A stack is a last-in, first-out structure.
 //----------------------------------------------------------------------------
 
+import planISC.gNode;
 
 public interface UnboundedStackInterface<T> extends StackInterface<T>
 
 {
-  void push(T element);
+  void push(gNode element);
   // Places element at the top of this stack.
 
 }

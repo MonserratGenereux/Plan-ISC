@@ -6,11 +6,12 @@ package Queue;
 // A queue is a "first in, first out" structure.
 //----------------------------------------------------------------------------
 
+import planISC.gNode;
 
 public interface QueueInterface<T>
 
 {
-  T dequeue() throws QueueUnderflowException;
+  gNode dequeue() throws QueueUnderflowException;
   // Throws QueueUnderflowException if this queue is empty;
   // otherwise, removes front element from this queue and returns it.
 

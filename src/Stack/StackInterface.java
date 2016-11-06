@@ -6,6 +6,7 @@ package Stack;
 // A stack is a last-in, first-out structure.
 //----------------------------------------------------------------------------
 
+import planISC.gNode;
 
 public interface StackInterface<T>
 
@@ -14,7 +15,7 @@ public interface StackInterface<T>
   // Throws StackUnderflowException if this stack is empty,
   // otherwise removes top element from this stack.
   
-  T top() throws StackUnderflowException;
+  gNode top() throws StackUnderflowException;
   // Throws StackUnderflowException if this stack is empty,
   // otherwise returns top element from this stack.
   
