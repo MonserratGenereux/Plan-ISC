@@ -293,5 +293,38 @@ public class testGraph {
 		degree.addVertex(DH2006);
 		
 	}
+		private static boolean isPath2(WeightedGraphInterface<String> graph, String startVertex, String endVertex)
+
+	// Returns true if a path exists on graph, from startVertex to endVertex;
+	// otherwise returns false. Uses breadth-first search algorithm.
+
+	{
+		UnboundedQueueInterface<String> queue = new LinkedUnbndQueue<String>();
+		UnboundedQueueInterface<String> vertexQueue = new LinkedUnbndQueue<String>();
+		String vertex;
+		String item;
+		boolean found = false;
+
+		graph.clearMarks();
+		queue.enqueue(startVertex);
+		do {
+			vertex = queue.dequeue();
+			if (vertex == endVertex)
+				found = true;
+			else {
+				if (!graph.isMarked(vertex)) {
+					graph.markVertex(vertex);
+					vertexQueue = graph.getToVertices(vertex);
+
+					while (!vertexQueue.isEmpty()) {
+						item = vertexQueue.dequeue();
+						if (!graph.isMarked(item))
+							queue.enqueue(item);
+					}
+				}
+			}
+		} while (!queue.isEmpty() && !found);
+		return found;
+	}
 
 }
