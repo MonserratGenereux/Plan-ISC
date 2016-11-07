@@ -298,16 +298,14 @@ public class testGraph {
 		degree.addVertex(DH2006);
 		
 		boolean result;
-		result = isPath2(degree, DH2006, DTC3054);
+		result = isPath(degree, DH2006, DTC3054);
 		System.out.println(result);
 				
 	}
 	
-	private static boolean isPath2(WeightedGraph<gNode> degree, gNode dH2006, gNode dTC3054)
-
+	private static boolean isPath(WeightedGraph<gNode> iscGraph, gNode startNode, gNode endNode)
 	// Returns true if a path exists on graph, from startVertex to endVertex;
 	// otherwise returns false. Uses breadth-first search algorithm.
-
 	{
 		UnboundedQueueInterface<gNode> queue = new LinkedUnbndQueue<gNode>();
 		UnboundedQueueInterface<gNode> vertexQueue = new LinkedUnbndQueue<gNode>();
@@ -315,20 +313,20 @@ public class testGraph {
 		gNode item;
 		boolean found = false;
 
-		degree.clearMarks();
-		queue.enqueue(dH2006);
+		iscGraph.clearMarks();
+		queue.enqueue(startNode);
 		do {
 			vertex = queue.dequeue();
-			if (vertex.equals(dTC3054) )
+			if (vertex.equals(endNode) )
 				found = true;
 			else {
-				if (!degree.isMarked(vertex)) {
-					degree.markVertex(vertex);
-					vertexQueue = degree.getToVertices(vertex);
+				if (!iscGraph.isMarked(vertex)) {
+					iscGraph.markVertex(vertex);
+					vertexQueue = iscGraph.getToVertices(vertex);
 
 					while (!vertexQueue.isEmpty()) {
 						item = vertexQueue.dequeue();
-						if (!degree.isMarked(item))
+						if (!iscGraph.isMarked(item))
 							queue.enqueue(item);
 					}
 				}
