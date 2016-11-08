@@ -298,6 +298,37 @@ public class testGraph {
 		degree.addVertex(DH2006);
 		
 		//Edges between nodes
+		degree.addEdge(DTC1001, DTC1014, 2);
+		degree.addEdge(DF1001, DF1002, 2);
+		degree.addEdge(DMA1001, DTC1003, 1);
+		degree.addEdge(DMA1001, DMA1015, 2);
+		degree.addEdge(DH1015, DH1040, 2);
+		degree.addEdge(DH1001, DH1002, 2);
+		degree.addEdge(DH1002, DH1003, 2);
+		degree.addEdge(DH1003, DH1004, 2);
+		degree.addEdge(DH1004, DH1005, 2);
+		degree.addEdge(DH1005, DH1016, 2);
+		degree.addEdge(DTC1014, DTC2016, 2);
+		degree.addEdge(DTC1014, DTC1016, 1);
+		degree.addEdge(DTC1014, DTC1015, 1);
+		degree.addEdge(DF1002, DF1005, 2);
+		degree.addEdge(DMA1015, DMA1017, 2);
+		degree.addEdge(DTC2016, DTC1018, 2);
+		degree.addEdge(DTC1016, DTC2008, 1);
+		degree.addEdge(DMA1017, DMA1019, 1);
+		degree.addEdge(DTC1016, DTC2018, 2);
+		degree.addEdge(DMA1017, DMA1006, 2);
+		degree.addEdge(DMA1017, DF1005, 2);
+		degree.addEdge(DMA1017, DMA2009, 2);
+		degree.addEdge(DMA1017, DMA1006, 2);
+		degree.addEdge(DH1040, DH1018, 1);
+		degree.addEdge(DH1040, DH2001, 2);
+		degree.addEdge(DH1040, DHS2000, 1);
+		degree.addEdge(DTC1018, DTC2017, 2);
+		degree.addEdge(DTC1018, DTC1021, 1);
+		degree.addEdge(DTC1018, DTC2020, 1);
+		degree.addEdge(DTC1019, DTC1020, 1);
+		
 		degree.addEdge(DTC2017, DTC3022, 1);
 		degree.addEdge(DTC2017, DTC2025, 2);
 		degree.addEdge(DTC2018, DTC2027, 1);
@@ -317,6 +348,8 @@ public class testGraph {
 		degree.addEdge(DTC2026, DTC3052, 1);
 		degree.addEdge(DTC2006, DTC2011, 2);
 		degree.addEdge(DTC2006, DTC3048, 1);
+		
+		
 				
 	}
 	private static boolean isPath(WeightedGraph<gNode> iscGraph, gNode startNode, gNode endNode)
