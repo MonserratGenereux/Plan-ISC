@@ -297,7 +297,7 @@ public class testGraph {
 		gNode DH2006 = new gNode(9,"Ética Aplicada","H2006");
 		degree.addVertex(DH2006);
 		
-		//Edges between nodes
+		//Edges between nodes in degree graph
 		degree.addEdge(DTC1001, DTC1014, 2);
 		degree.addEdge(DF1001, DF1002, 2);
 		degree.addEdge(DMA1001, DTC1003, 1);
@@ -328,7 +328,6 @@ public class testGraph {
 		degree.addEdge(DTC1018, DTC1021, 1);
 		degree.addEdge(DTC1018, DTC2020, 1);
 		degree.addEdge(DTC1019, DTC1020, 1);
-		
 		degree.addEdge(DTC2017, DTC3022, 1);
 		degree.addEdge(DTC2017, DTC2025, 2);
 		degree.addEdge(DTC2018, DTC2027, 1);
@@ -349,7 +348,60 @@ public class testGraph {
 		degree.addEdge(DTC2006, DTC2011, 2);
 		degree.addEdge(DTC2006, DTC3048, 1);
 		
+		//Edges between nodes in system graph
+		system.addEdge(SYTC1001, SYTC1014, 2);
+		system.addEdge(SYF1001, SYF1002, 2);
+		system.addEdge(SYMA1001, SYTC1003, 1);
+		system.addEdge(SYMA1001, SYMA1015, 2);
+		system.addEdge(SYH1015, SYH1040, 2);
+		system.addEdge(SYH1001, SYH1002, 2);
+		system.addEdge(SYH1002, SYH1003, 2);
+		system.addEdge(SYH1003, SYH1004, 2);
+		system.addEdge(SYH1004, SYH1005, 2);
+		system.addEdge(SYH1005, SYH1016, 2);
+		system.addEdge(SYTC1014, SYTC2016, 2);
+		system.addEdge(SYTC1014, SYTC1016, 1);
+		system.addEdge(SYTC1014, SYTC1015, 1);
+		system.addEdge(SYF1002, SYF1005, 2);
+		system.addEdge(SYMA1015, SYMA1017, 2);
+		system.addEdge(SYTC2016, SYTC1018, 2);
+		system.addEdge(SYTC1016, SYTC2008, 1);
+		system.addEdge(SYMA1017, SYMA1019, 1);
+		system.addEdge(SYTC1016, SYTC2018, 2);
+		system.addEdge(SYMA1017, SYMA1006, 2);
+		system.addEdge(SYMA1017, SYF1005, 2);
+		system.addEdge(SYMA1017, SYMA2009, 2);
+		system.addEdge(SYMA1017, SYMA1006, 2);
+		system.addEdge(SYH1040, SYH1018, 1);
+		system.addEdge(SYH1040, SYH2001, 2);
+		system.addEdge(SYH1040, SYHS2000, 1);
+		system.addEdge(SYTC1018, SYTC2017, 2);
+		system.addEdge(SYTC1018, SYTC1021, 1);
+		system.addEdge(SYTC1018, SYTC2020, 1);
+		system.addEdge(SYTC1019, SYTC1020, 1);
+		system.addEdge(SYTC2017, SYTC3022, 1);
+		system.addEdge(SYTC2017, SYTC2025, 2);
+		system.addEdge(SYTC2018, SYTC2027, 1);
+		system.addEdge(SYTC2018, SYTC2022, 2);
+		system.addEdge(SYTC1020, SYTC3041, 2);
+		system.addEdge(SYTC1020, SYTC2004, 1);
+		system.addEdge(SYTC2008, SYTC2025, 1);
+		system.addEdge(SYTC2008, SYTC2027, 1);
+		system.addEdge(SYTC2022, SYTC2026, 1);
+		system.addEdge(SYTC2020, SYTC2006, 1);
+		system.addEdge(SYTC2004, SYTC3002, 1);
+		system.addEdge(SYTC2004, SYTC2024, 1);
+		system.addEdge(SYTC2004, SYTC3045, 1);
+		system.addEdge(SYTC2004, SYTC3049, 1);
+		system.addEdge(SYTI2011, SYTC3002, 1);
+		system.addEdge(SYTC2024, SYTC3054, 2);
+		system.addEdge(SYTC2026, SYTC3052, 1);
+		system.addEdge(SYTC2006, SYTC2011, 2);
+		system.addEdge(SYTC2006, SYTC3048, 1);	
 		
+		boolean result;
+		result = isPath(degree, DTC1001, DTC3022);
+		result = isPath(system, DTC1001, DTC3022);
 				
 	}
 	private static boolean isPath(WeightedGraph<gNode> iscGraph, gNode startNode, gNode endNode)
