@@ -14,4 +14,5 @@ public interface UnboundedQueueInterface<T> extends QueueInterface<T>
 {
   void enqueue(gNode dH2006);
   // Adds element to the rear of this queue.
+  int size();
 }

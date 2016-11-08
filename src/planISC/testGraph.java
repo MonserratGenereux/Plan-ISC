@@ -297,26 +297,46 @@ public class testGraph {
 		gNode DH2006 = new gNode(9,"Ética Aplicada","H2006");
 		degree.addVertex(DH2006);
 		
-		boolean result;
-		result = isPath(degree, DH2006, DTC3054);
-		System.out.println(result);
+		//Edges between nodes
+		degree.addEdge(DTC2017, DTC3022, 1);
+		degree.addEdge(DTC2017, DTC2025, 2);
+		degree.addEdge(DTC2018, DTC2027, 1);
+		degree.addEdge(DTC2018, DTC2022, 2);
+		degree.addEdge(DTC1020, DTC3041, 2);
+		degree.addEdge(DTC1020, DTC2004, 1);
+		degree.addEdge(DTC2008, DTC2025, 1);
+		degree.addEdge(DTC2008, DTC2027, 1);
+		degree.addEdge(DTC2022, DTC2026, 1);
+		degree.addEdge(DTC2020, DTC2006, 1);
+		degree.addEdge(DTC2004, DTC3002, 1);
+		degree.addEdge(DTC2004, DTC2024, 1);
+		degree.addEdge(DTC2004, DTC3045, 1);
+		degree.addEdge(DTC2004, DTC3049, 1);
+		degree.addEdge(DTI2011, DTC3002, 1);
+		degree.addEdge(DTC2024, DTC3054, 2);
+		degree.addEdge(DTC2026, DTC3052, 1);
+		degree.addEdge(DTC2006, DTC2011, 2);
+		degree.addEdge(DTC2006, DTC3048, 1);
 				
 	}
-	
 	private static boolean isPath(WeightedGraph<gNode> iscGraph, gNode startNode, gNode endNode)
 	// Returns true if a path exists on graph, from startVertex to endVertex;
 	// otherwise returns false. Uses breadth-first search algorithm.
 	{
 		UnboundedQueueInterface<gNode> queue = new LinkedUnbndQueue<gNode>();
 		UnboundedQueueInterface<gNode> vertexQueue = new LinkedUnbndQueue<gNode>();
+		//UnboundedQueueInterface<gNode> upNodes = new LinkedUnbndQueue<gNode>();
 		gNode vertex;
 		gNode item;
 		boolean found = false;
 
+		
 		iscGraph.clearMarks();
 		queue.enqueue(startNode);
+		
 		do {
 			vertex = queue.dequeue();
+			System.out.println(vertex.key);
 			if (vertex.equals(endNode) )
 				found = true;
 			else {
