@@ -23,21 +23,21 @@ public class testGraph {
 		Vertex SYTC1001 = new Vertex("TC1001","Introducción a la Computación","info");
 		system.addVertexSystem(SYTC1001);
 		Vertex SYF1001 = new Vertex("F1001","Introducción a la Física","info");
-		system.addVertexDegree(SYF1001);
+		system.addVertexSystem(SYF1001);
 		Vertex SYMA1001 = new Vertex("MA1001","Introducción a las Matemáticas","info");
-		system.addVertexDegree(SYMA1001);
+		system.addVertexSystem(SYMA1001);
 		Vertex SYH1015 = new Vertex("H1015","Fundamentos de escritura","info");
-		system.addVertexDegree(SYH1015);
+		system.addVertexSystem(SYH1015);
 		Vertex SYH1001 = new Vertex("H1001","Inglés Remedial 1","info");
-		system.addVertexDegree(SYH1001);
+		system.addVertexSystem(SYH1001);
 		Vertex SYH1002 = new Vertex("H1002","Inglés Remedial 2","info");
-		system.addVertexDegree(SYH1002);
+		system.addVertexSystem(SYH1002);
 		Vertex SYH1003 = new Vertex("H1003","Inglés Remedial 3","info");
-		system.addVertexDegree(SYH1003);
+		system.addVertexSystem(SYH1003);
 		Vertex SYH1004 = new Vertex("H1004","Inglés Remedial 4","info");
-		system.addVertexDegree(SYH1004);
+		system.addVertexSystem(SYH1004);
 		Vertex SYH1005 = new Vertex("H1005","Inglés Remedial 5","info");
-		system.addVertexDegree(SYH1005);
+		system.addVertexSystem(SYH1005);
 		
 	
 		//Semestre 1
