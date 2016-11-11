@@ -56,7 +56,7 @@ public class Dijkstra
 		 new Vertex(vertex.key, vertex.status);
 	}
 	
-	public static void addVertexSystem(Vertex vertex){
+	public static void addVertexDegree(Vertex vertex){
 		 new Vertex(vertex.semester,vertex.key, vertex.name);
 	}
 	
