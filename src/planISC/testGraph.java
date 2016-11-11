@@ -10,7 +10,6 @@ public class testGraph {
 	@SuppressWarnings({ "rawtypes" })
 	public static void main(String[] args) {
 		
-<<<<<<< HEAD
 		Dijkstra system = new Dijkstra();
 		Dijkstra degree = new Dijkstra();
 		Dijkstra student = new Dijkstra();
@@ -402,20 +401,10 @@ public class testGraph {
 		result = isPath(system, DTC1001, DTC3022);
 		
 	}
-	private static boolean isPath(WeightedGraph<Vertex> iscGraph, Vertex startNode, Vertex endNode)
-=======
-		
-		
-			agregar();
-		
-		/*boolean result;
-		result = isPath(degree, DTC1001, DTC3022);
-		result = isPath(system, DTC1001, DTC3022);*/
-				
-	}
+	
 	private static boolean isPath(WeightedGraph<gNode> iscGraph, gNode startNode, gNode endNode)
 
->>>>>>> origin/master
+
 	// Returns true if a path exists on graph, from startVertex to endVertex;
 	// otherwise returns false. Uses breadth-first search algorithm.
 	{
@@ -450,7 +439,6 @@ public class testGraph {
 		} while (!queue.isEmpty() && !found);
 		return found;
 	}
-<<<<<<< HEAD
 	
 	
 	public static void computePaths(WeightedGraph<Vertex> iscGraphgNode source)
@@ -478,7 +466,7 @@ public class testGraph {
             }
         }
     }
-=======
+
 	private static void agregar(){
 		WeightedGraph<gNode> system = new WeightedGraph<gNode>(100);
 		WeightedGraph<gNode> degree = new WeightedGraph<gNode>(100);
@@ -868,5 +856,5 @@ public class testGraph {
 				system.addEdge(SYTC2006, SYTC3048, 1);
 		
 	}
->>>>>>> origin/master
+
 }
