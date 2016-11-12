@@ -1,18 +1,15 @@
 package planISC;
 
-import java.util.PriorityQueue;
-
-import Queue.LinkedUnbndQueue;
-import Queue.UnboundedQueueInterface;
+import java.util.List;
 
 public class testGraph {
-
-	@SuppressWarnings({ "rawtypes" })
+	
 	public static void main(String[] args) {
-		
+	
 		Dijkstra system = new Dijkstra();
 		Dijkstra degree = new Dijkstra();
-		Dijkstra student = new Dijkstra();
+		
+		//Dijkstra student = new Dijkstra();
 		
 		//WeightedGraph<gNode> system = new WeightedGraph<gNode>(100);
 		//WeightedGraph<gNode> degree = new WeightedGraph<gNode>(100);
@@ -402,6 +399,11 @@ public class testGraph {
 		system.addEdge(SYTC2026, SYTC3052, 1);
 		system.addEdge(SYTC2006, SYTC2011, 2);
 		system.addEdge(SYTC2006, SYTC3048, 1);	
+		
+		
+		degree.computePaths(DTC1014);
+		/*List<Vertex> path = degree.getShortestPathTo(DTC1001);
+		System.out.println("Path: " + path);*/
 		
 	}
 

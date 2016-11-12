@@ -14,7 +14,11 @@ class Vertex implements Comparable<Vertex>
     public Edge[] adjacencies;
     public double minDistance = Double.POSITIVE_INFINITY;
     public Vertex previous;
-    public String toString() { return name; }
+    
+    public String toString() { 
+    	return name; 
+    }
+    
     public int compareTo(Vertex other)
     {
         return Double.compare(minDistance, other.minDistance);
@@ -26,7 +30,7 @@ class Vertex implements Comparable<Vertex>
 	}
 	
 	//Degree Node
-	public Vertex(int semester2, String key2, String name2) {
+	public Vertex(int semester2, String name2, String key2) {
 		// TODO Auto-generated constructor stub
 		this.key = key2;
 		this.name = name2;
@@ -46,8 +50,11 @@ class Edge
 {
     public final Vertex target;
     public final double weight;
-    public Edge(Vertex argTarget, double argWeight)
-    { target = argTarget; weight = argWeight; }
+    
+    public Edge(Vertex argTarget, double argWeight){ 
+    	target = argTarget; 
+    	weight = argWeight; 
+    }
 }
 
 public class Dijkstra
@@ -65,10 +72,19 @@ public class Dijkstra
 	}
 	
 	public void addEdge(Vertex vertexInicio, Vertex vertexFinal,double weight){
-		vertexInicio.adjacencies = new Edge[]{ new Edge(vertexFinal, weight) };
+		if (vertexInicio.adjacencies[0] == null) {
+			vertexInicio.adjacencies = new Edge[]{ new Edge(vertexFinal, weight) };
+		}else{
+			for (int i = 0; i < vertexInicio.adjacencies.length-1; i++) {
+				if(vertexInicio.adjacencies[i] == null){
+					vertexInicio.adjacencies[i] = new Edge(vertexFinal,weight);
+				}
+			}
+		}
+			
 	}
 	
-    public static void computePaths(Vertex source)
+    public void computePaths(Vertex source)
     {
         source.minDistance = 0.;
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
@@ -76,25 +92,24 @@ public class Dijkstra
 
     while (!vertexQueue.isEmpty()) {
         Vertex u = vertexQueue.poll();
-
             // Visit each edge exiting u
             for (Edge e : u.adjacencies)
             {
                 Vertex v = e.target;
+                System.out.println(v.key);
                 double weight = e.weight;
                 double distanceThroughU = u.minDistance + weight;
-        if (distanceThroughU < v.minDistance) {
-            vertexQueue.remove(v);
-
-            v.minDistance = distanceThroughU ;
-            v.previous = u;
-            vertexQueue.add(v);
-        }
+                if (distanceThroughU < v.minDistance) {
+                		vertexQueue.remove(v);
+                		v.minDistance = distanceThroughU ;
+                		v.previous = u;
+                		vertexQueue.add(v);
+                }
             }
         }
     }
 
-    public static List<Vertex> getShortestPathTo(Vertex target)
+    public List<Vertex> getShortestPathTo(Vertex target)
     {
         List<Vertex> path = new ArrayList<Vertex>();
         for (Vertex vertex = target; vertex != null; vertex = vertex.previous)
@@ -104,9 +119,6 @@ public class Dijkstra
         return path;
     }
 
-       /* computePaths(F); // run Dijkstra
-        System.out.println("Distance to " + Z + ": " + Z.minDistance);
-        List<Vertex> path = getShortestPathTo(O);
-        System.out.println("Path: " + path);*/
+       
    
 }
