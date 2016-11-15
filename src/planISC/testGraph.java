@@ -376,9 +376,7 @@ public class testGraph {
 		system.addEdge(SYH1040, SYH1018, 1);
 		system.addEdge(SYH1040, SYH2001, 2);
 		system.addEdge(SYH1040, SYHS2000, 1);
-		system.addEdge(SYTC1018, SYTC2017, 2);
-		system.addEdge(SYTC1018, SYTC1021, 1);
-		system.addEdge(SYTC1018, SYTC2020, 1);
+		
 		system.addEdge(SYTC1019, SYTC1020, 1);
 		system.addEdge(SYTC2017, SYTC3022, 1);
 		system.addEdge(SYTC2017, SYTC2025, 2);
@@ -401,9 +399,20 @@ public class testGraph {
 		system.addEdge(SYTC2006, SYTC3048, 1);	
 		
 		
-		degree.computePaths(DTC1001);
-		//List<Vertex> path = degree.getShortestPathTo(DTC1021);
-		//System.out.println("Path: " + path);
+		system.addEdge(SYTC1018, SYTC2017, 2);
+		system.addEdge(SYTC1018, SYTC1021, 1);
+		system.addEdge(SYTC1018, SYTC2020, 1);
+		
+		system.computePaths(SYTC1001);
+		
+		/*for (int i = 0; i < SYTC1018.adjacencies.size(); i++) {
+			System.out.println(SYTC1018.adjacencies.get(i).target.key);
+		}*/
+		
+		List<Vertex> path = degree.getShortestPathTo(SYTC1018);
+		System.out.println("Path: " + path);
+		
+		
 		
 	}
 

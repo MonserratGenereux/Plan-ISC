@@ -3,6 +3,7 @@ import java.util.PriorityQueue;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 
 class Vertex implements Comparable<Vertex>
 {
@@ -11,7 +12,7 @@ class Vertex implements Comparable<Vertex>
 	protected String info;
 	protected String status;
 	protected int semester;
-    public Edge[] adjacencies;
+    public LinkedList<Edge> adjacencies;
     public double minDistance = Double.POSITIVE_INFINITY;
     public Vertex previous;
     
@@ -72,31 +73,34 @@ public class Dijkstra
 	}
 	
 	public void addEdge(Vertex vertexInicio, Vertex vertexFinal,double weight){
+		Edge edge = new Edge(vertexFinal, weight);
 		if (vertexInicio.adjacencies == null) {
-			vertexInicio.adjacencies = new Edge[]{ new Edge(vertexFinal, weight) };
+			vertexInicio.adjacencies = new LinkedList<Edge>();
+			vertexInicio.adjacencies.add(edge);
 		}else{
-			for (int i = 0; i < vertexInicio.adjacencies.length-1; i++) {
-				if(vertexInicio.adjacencies[i] == null){
-					vertexInicio.adjacencies[i] = new Edge(vertexFinal,weight);
+				vertexInicio.adjacencies.add(edge);
 				}
-			}
-		}
+			
 			
 	}
 	
     public void computePaths(Vertex source)
     {
+    	
         source.minDistance = 0.;
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
         vertexQueue.add(source);
+        Edge e = null;
 
     while (!vertexQueue.isEmpty()) {
         Vertex u = vertexQueue.poll();
-        System.out.println(u.name);
+     System.out.println(u.name + "1");
             // Visit each edge exiting u
         if (u.adjacencies != null){
-            for (Edge e : u.adjacencies){
-            		Vertex v = e.target;
+        	for (int i = 0; i < source.adjacencies.size(); i++){
+            		e = source.adjacencies.get(i);
+					Vertex v = e.target;
+					System.out.println(e.target.name);
             		double weight = e.weight;
             		double distanceThroughU = u.minDistance + weight;
             		if (distanceThroughU < v.minDistance) {
@@ -104,7 +108,8 @@ public class Dijkstra
             				v.minDistance = distanceThroughU ;
             				v.previous = u;
             				if(v != source.previous){
-            				vertexQueue.add(v);}
+            				vertexQueue.add(v);
+            				System.out.println(v.key);}
             		}
             	}
             }
