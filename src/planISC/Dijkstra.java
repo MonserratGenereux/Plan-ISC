@@ -94,22 +94,21 @@ public class Dijkstra
 
     while (!vertexQueue.isEmpty()) {
         Vertex u = vertexQueue.poll();
-     System.out.println(u.name + "1");
             // Visit each edge exiting u
         if (u.adjacencies != null){
         	for (int i = 0; i < source.adjacencies.size(); i++){
             		e = source.adjacencies.get(i);
 					Vertex v = e.target;
-					System.out.println(e.target.name);
             		double weight = e.weight;
             		double distanceThroughU = u.minDistance + weight;
             		if (distanceThroughU < v.minDistance) {
-            				vertexQueue.remove(v);
-            				v.minDistance = distanceThroughU ;
-            				v.previous = u;
-            				if(v != source.previous){
-            				vertexQueue.add(v);
-            				System.out.println(v.key);}
+            			vertexQueue.remove(v);
+            			v.minDistance = distanceThroughU ;
+            			v.previous = u;
+            			if(v != source.previous){
+           					vertexQueue.add(v);
+           					System.out.println(v.name);
+           				}
             		}
             	}
             }
