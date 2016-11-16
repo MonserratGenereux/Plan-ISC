@@ -6,8 +6,163 @@ public class testGraph {
 	
 	public static void main(String[] args) {
 	
+<<<<<<< HEAD
 		Dijkstra degree = new Dijkstra();
 		
+=======
+	//	Dijkstra system = new Dijkstra();
+		Dijkstra degree = new Dijkstra();
+		
+		//Dijkstra student = new Dijkstra();
+		
+		//WeightedGraph<gNode> system = new WeightedGraph<gNode>(100);
+		//WeightedGraph<gNode> degree = new WeightedGraph<gNode>(100);
+		
+	/*	//Grafo Systema
+		
+		//Remediales
+		Vertex SYTC1001 = new Vertex("TC1001","Introducción a la Computación","info");
+		system.addVertexSystem(SYTC1001);
+		Vertex SYF1001 = new Vertex("F1001","Introducción a la Física","info");
+		system.addVertexSystem(SYF1001);
+		Vertex SYMA1001 = new Vertex("MA1001","Introducción a las Matemáticas","info");
+		system.addVertexSystem(SYMA1001);
+		Vertex SYH1015 = new Vertex("H1015","Fundamentos de escritura","info");
+		system.addVertexSystem(SYH1015);
+		Vertex SYH1001 = new Vertex("H1001","Inglés Remedial 1","info");
+		system.addVertexSystem(SYH1001);
+		Vertex SYH1002 = new Vertex("H1002","Inglés Remedial 2","info");
+		system.addVertexSystem(SYH1002);
+		Vertex SYH1003 = new Vertex("H1003","Inglés Remedial 3","info");
+		system.addVertexSystem(SYH1003);
+		Vertex SYH1004 = new Vertex("H1004","Inglés Remedial 4","info");
+		system.addVertexSystem(SYH1004);
+		Vertex SYH1005 = new Vertex("H1005","Inglés Remedial 5","info");
+		system.addVertexSystem(SYH1005);
+		
+	
+		//Semestre 1
+		Vertex SYTC1014 = new Vertex("TC1014","Fundamentos de Programación","info");
+		system.addVertexSystem(SYTC1014);
+		Vertex SYF1002 = new Vertex("F1002","Física 1","info");
+		system.addVertexSystem(SYF1002);
+		Vertex SYTC1003 = new Vertex("TC1003","Matemáticas Discretas","info");
+		system.addVertexSystem(SYTC1003);
+		Vertex SYMA1015 = new Vertex("Ma1015","Matemáticas 1","info");
+		system.addVertexSystem(SYMA1015);
+		Vertex SYTC1023 = new Vertex("TC1023","Introducción a la ingeniería en sistemas Computacionales","info");
+		system.addVertexSystem(SYTC1023);
+		Vertex SYDS1003 = new Vertex("DS1003","Ciencias Naturales y Desarrollo Sustentable","info");
+		system.addVertexSystem(SYDS1003);
+		Vertex SYH1016 = new Vertex("H1016","Lengua Extranjera","info");
+		system.addVertexSystem(SYH1016);
+		
+		//Semestre 2
+		Vertex SYTC2016 = new Vertex("TC2016","Programación Orientada a Objetos","info");
+		system.addVertexSystem(SYTC2016);
+		Vertex SYTC1016 = new Vertex("TC1016","Organización Computacional","info");
+		system.addVertexSystem(SYTC1016);
+		Vertex SYMA1017 = new Vertex("MA1017","Matemáticas 2","info");
+		system.addVertexSystem(SYMA1017);
+		Vertex SYTC1015 = new Vertex("TC1015","Fundamentos de Diseño Interactivo","info");
+		system.addVertexSystem(SYTC1015);
+		Vertex SYAD1005 = new Vertex("AD1005","Administración e Innovación en Modelos de Negocio","info");
+		system.addVertexSystem(SYAD1005);
+		Vertex SYH1040 = new Vertex("H1040","Análisis y Expresión Verbal","info");
+		system.addVertexSystem(SYH1040);
+		
+		//Semestre 3
+		Vertex SYTC1018 = new Vertex("TC1018","Estructura de Datos","info");
+		system.addVertexSystem(SYTC1018);
+		Vertex SYMA1006 = new Vertex("MA1006","Probabilidad y Estadítica","info");
+		system.addVertexSystem(SYMA1006);
+		Vertex SYF1005 = new Vertex("F1005","Electricidad y Magnetismo","info");
+		system.addVertexSystem(SYF1005);
+		Vertex SYMA2009 = new Vertex("MA2009","Matemáticas 3","info");
+		system.addVertexSystem(SYMA2009);
+		Vertex SYTC1019 = new Vertex("TC1019","Fundamentos de ingeniería de Software","info");
+		system.addVertexSystem(SYTC1019);
+		Vertex SYH1018 = new Vertex("H1018","Ética Persona y Sociedad","info");
+		
+		//Semestre 4
+		system.addVertexSystem(SYH1018);
+		Vertex SYTC2017 = new Vertex("TC2017","Análisis y Diseño de Algoritmos","info");
+		system.addVertexSystem(SYTC2017);
+		Vertex SYTC1021 = new Vertex("TC1021","Proyecto de Desarrollo de Videojuegos","info");
+		system.addVertexSystem(SYTC1021);
+		Vertex SYTC2018 = new Vertex("TC2018","Fundamentos de Redes","info");
+		system.addVertexSystem(SYTC2018);
+		Vertex SYTC2019 = new Vertex("TC2019","Métodos Númericos en Ingeniería","info");
+		system.addVertexSystem(SYTC2019);
+		Vertex SYTC1020 = new Vertex("TC1020","Bases de Datos","info");
+		system.addVertexSystem(SYTC1020);
+		Vertex SYH2001 = new Vertex("H2001","Expresión Verbal en el Ámbito Profesional","info");
+		system.addVertexSystem(SYH2001);
+		
+		//Semestre 5
+		Vertex SYTC2008 = new Vertex("TC2008","Sistemas Operativos","");
+		system.addVertexSystem(SYTC2008);
+		Vertex SYMA1019 = new Vertex("MA1019","Álgebra Lineal","");
+		system.addVertexSystem(SYMA1019);
+		Vertex SYTC2022 = new Vertex("TC2022","Interconexión de Redes","");
+		system.addVertexSystem(SYTC2022);
+		Vertex SYTC2020 = new Vertex("TC2020","Matemáticas computacionales","");
+		system.addVertexSystem(SYTC2020);
+		Vertex SYTC2004 = new Vertex("TC2004","Análisis y Modelación de Sistemas de Software","");
+		system.addVertexSystem(SYTC2004);
+		Vertex SYHS2000 = new Vertex("HS2000","Humanidades y Bellas Artes","");
+		system.addVertexSystem(SYHS2000);
+
+		//Semestre 6
+		Vertex SYTC2025 = new Vertex("TC2025","Programación Avanzada","");
+		system.addVertexSystem(SYTC2025);
+		Vertex SYEM1005 = new Vertex("EM1005","Emprendimiento","");
+		system.addVertexSystem(SYEM1005);
+		Vertex SYTI2011 = new Vertex("TI2011","Evaluación y Administración de Proyectos","");
+		system.addVertexSystem(SYTI2011);
+		Vertex SYTC3041 = new Vertex("TC3041","Bases de Datos Avanzadas","");
+		system.addVertexSystem(SYTC3041);
+		Vertex SYTC2024 = new Vertex("TC2024","Proyecto de Desarrollo para Dispositivos Móviles","");
+		system.addVertexSystem(SYTC2024);
+		Vertex SYTC3045 = new Vertex("TC3045","Calidad y Pruebas de Software","");
+		system.addVertexSystem(SYTC3045);
+		
+		//Semestre 7
+		Vertex SYTC2027 = new Vertex("TC2027","Seguridad Informática","");
+		system.addVertexSystem(SYTC2027);
+		Vertex SYTC3002 = new Vertex("TC3002","Administración de Proyectos de Ingeniería de Software","");
+		system.addVertexSystem(SYTC3002);
+		Vertex SYTC2026 = new Vertex("TC2026","Desarrollo de Aplicaciones Web","");
+		system.addVertexSystem(SYTC2026);
+		Vertex SYTC2006 = new Vertex("TC2006","Lenguajes de Programación","");
+		system.addVertexSystem(SYTC2006);
+		Vertex SYHS2005 = new Vertex("HS2005","Ciudadanía","");
+		system.addVertexSystem(SYHS2005);
+		
+		//Semestre 8
+		Vertex SYTC3022 = new Vertex("TC3022","Gráficas Computacionales","");
+		system.addVertexSystem(SYTC3022);
+		Vertex SYTC2007 = new Vertex("TC2007","Métodos Cuantitativos y Simulación","");
+		system.addVertexSystem(SYTC2007);
+		Vertex SYTC3052 = new Vertex("TC3052","Laboratorio de Desarrollo de aplicaciones Web","");
+		system.addVertexSystem(SYTC3052);
+		Vertex SYTC3048 = new Vertex("TC3048","Diseño de Compiladores","");
+		system.addVertexSystem(SYTC3048);
+		Vertex SYTC3049 = new Vertex("TC3049","Diseño y Arquitectura de Software","");
+		system.addVertexSystem(SYTC3049);
+		
+		//Semestre 9
+		Vertex SYTI3035 = new Vertex("TI3035","Introducción a la Vida Profesional","");
+		system.addVertexSystem(SYTI3035);
+		Vertex SYTC2011 = new Vertex("TC2011","Sistemas Inteligentes","");
+		system.addVertexSystem(SYTC2011);
+		Vertex SYTC3054 = new Vertex("TC3054","Proyecto Integrador para el Desarrollo de Soluciones Empresariales","");
+		system.addVertexSystem(SYTC3054);
+		Vertex SYH2006 = new Vertex("H2006","Ética Aplicada","");
+		system.addVertexSystem(SYH2006);
+		*/
+		
+>>>>>>> origin/master
 		//Grafo Carrera
 		//Nodo Raíz
 		Vertex root = new Vertex(-1, "Ingeniería en Sistemas Computacionales" , "ISC");
@@ -156,8 +311,72 @@ public class testGraph {
 		degree.addEdge(DTC2006, DTC2011, 2);
 		degree.addEdge(DTC2006, DTC3048, 1);
 		
+<<<<<<< HEAD
 		degree.computePaths(root);
 		List<Vertex> path = degree.getShortestPathTo(DTC2011);
+=======
+	/*	//Edges between nodes in system graph
+		system.addEdge(SYTC1001, SYTC1014, 2);
+		system.addEdge(SYF1001, SYF1002, 2);
+		system.addEdge(SYMA1001, SYTC1003, 1);
+		system.addEdge(SYMA1001, SYMA1015, 2);
+		system.addEdge(SYH1015, SYH1040, 2);
+		system.addEdge(SYH1001, SYH1002, 2);
+		system.addEdge(SYH1002, SYH1003, 2);
+		system.addEdge(SYH1003, SYH1004, 2);
+		system.addEdge(SYH1004, SYH1005, 2);
+		system.addEdge(SYH1005, SYH1016, 2);
+		system.addEdge(SYTC1014, SYTC2016, 2);
+		system.addEdge(SYTC1014, SYTC1016, 1);
+		system.addEdge(SYTC1014, SYTC1015, 1);
+		system.addEdge(SYF1002, SYF1005, 2);
+		system.addEdge(SYMA1015, SYMA1017, 2);
+		system.addEdge(SYTC2016, SYTC1018, 2);
+		system.addEdge(SYTC1016, SYTC2008, 1);
+		system.addEdge(SYMA1017, SYMA1019, 1);
+		system.addEdge(SYTC1016, SYTC2018, 2);
+		system.addEdge(SYMA1017, SYMA1006, 2);
+		system.addEdge(SYMA1017, SYF1005, 2);
+		system.addEdge(SYMA1017, SYMA2009, 2);
+		system.addEdge(SYMA1017, SYMA1006, 2);
+		system.addEdge(SYH1040, SYH1018, 1);
+		system.addEdge(SYH1040, SYH2001, 2);
+		system.addEdge(SYH1040, SYHS2000, 1);
+		
+		system.addEdge(SYTC1019, SYTC1020, 1);
+		system.addEdge(SYTC2017, SYTC3022, 1);
+		system.addEdge(SYTC2017, SYTC2025, 2);
+		system.addEdge(SYTC2018, SYTC2027, 1);
+		system.addEdge(SYTC2018, SYTC2022, 2);
+		system.addEdge(SYTC1020, SYTC3041, 2);
+		system.addEdge(SYTC1020, SYTC2004, 1);
+		system.addEdge(SYTC2008, SYTC2025, 1);
+		system.addEdge(SYTC2008, SYTC2027, 1);
+		system.addEdge(SYTC2022, SYTC2026, 1);
+		system.addEdge(SYTC2020, SYTC2006, 1);
+		system.addEdge(SYTC2004, SYTC3002, 1);
+		system.addEdge(SYTC2004, SYTC2024, 1);
+		system.addEdge(SYTC2004, SYTC3045, 1);
+		system.addEdge(SYTC2004, SYTC3049, 1);
+		system.addEdge(SYTI2011, SYTC3002, 1);
+		system.addEdge(SYTC2024, SYTC3054, 2);
+		system.addEdge(SYTC2026, SYTC3052, 1);
+		system.addEdge(SYTC2006, SYTC2011, 2);
+		system.addEdge(SYTC2006, SYTC3048, 1);	
+		
+		
+		system.addEdge(SYTC1018, SYTC2017, 2);
+		system.addEdge(SYTC1018, SYTC1021, 1);
+		system.addEdge(SYTC1018, SYTC2020, 1); */
+		
+		degree.computePaths(DTC1001);
+		
+		/*for (int i = 0; i < SYTC1018.adjacencies.size(); i++) {
+			System.out.println(SYTC1018.adjacencies.get(i).target.key);
+		}*/
+		
+		List<Vertex> path = degree.getShortestPathTo(DTC1018);
+>>>>>>> origin/master
 		System.out.println("Path: " + path);
 		
 	}
