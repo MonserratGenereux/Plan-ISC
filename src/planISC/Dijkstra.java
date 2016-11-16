@@ -82,7 +82,7 @@ public class Dijkstra
 				}
 			
 			
-	}
+	}	
 	
     public void computePaths(Vertex source)
     {
@@ -96,8 +96,8 @@ public class Dijkstra
         Vertex u = vertexQueue.poll();
             // Visit each edge exiting u
         if (u.adjacencies != null){
-        	for (int i = 0; i < source.adjacencies.size(); i++){
-            		e = source.adjacencies.get(i);
+        	for (int i = 0; i < u.adjacencies.size(); i++){
+            		e = u.adjacencies.get(i);
 					Vertex v = e.target;
             		double weight = e.weight;
             		double distanceThroughU = u.minDistance + weight;
@@ -107,7 +107,6 @@ public class Dijkstra
             			v.previous = u;
             			if(v != source.previous){
            					vertexQueue.add(v);
-           					System.out.println(v.name);
            				}
             		}
             	}
