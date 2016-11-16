@@ -6,7 +6,7 @@ public class testGraph {
 	
 	public static void main(String[] args) {
 	
-		Dijkstra system = new Dijkstra();
+	//	Dijkstra system = new Dijkstra();
 		Dijkstra degree = new Dijkstra();
 		
 		//Dijkstra student = new Dijkstra();
@@ -14,7 +14,7 @@ public class testGraph {
 		//WeightedGraph<gNode> system = new WeightedGraph<gNode>(100);
 		//WeightedGraph<gNode> degree = new WeightedGraph<gNode>(100);
 		
-		//Grafo Systema
+	/*	//Grafo Systema
 		
 		//Remediales
 		Vertex SYTC1001 = new Vertex("TC1001","Introducción a la Computación","info");
@@ -156,6 +156,7 @@ public class testGraph {
 		system.addVertexSystem(SYTC3054);
 		Vertex SYH2006 = new Vertex("H2006","Ética Aplicada","");
 		system.addVertexSystem(SYH2006);
+		*/
 		
 		//Grafo Carrera
 		//Remediales
@@ -349,7 +350,7 @@ public class testGraph {
 		degree.addEdge(DTC2006, DTC2011, 2);
 		degree.addEdge(DTC2006, DTC3048, 1);
 		
-		//Edges between nodes in system graph
+	/*	//Edges between nodes in system graph
 		system.addEdge(SYTC1001, SYTC1014, 2);
 		system.addEdge(SYF1001, SYF1002, 2);
 		system.addEdge(SYMA1001, SYTC1003, 1);
@@ -401,15 +402,15 @@ public class testGraph {
 		
 		system.addEdge(SYTC1018, SYTC2017, 2);
 		system.addEdge(SYTC1018, SYTC1021, 1);
-		system.addEdge(SYTC1018, SYTC2020, 1);
+		system.addEdge(SYTC1018, SYTC2020, 1); */
 		
-		system.computePaths(SYTC1001);
+		degree.computePaths(DTC1001);
 		
 		/*for (int i = 0; i < SYTC1018.adjacencies.size(); i++) {
 			System.out.println(SYTC1018.adjacencies.get(i).target.key);
 		}*/
 		
-		List<Vertex> path = degree.getShortestPathTo(SYTC1018);
+		List<Vertex> path = degree.getShortestPathTo(DTC1018);
 		System.out.println("Path: " + path);
 		
 		
