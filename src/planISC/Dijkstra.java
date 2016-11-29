@@ -173,7 +173,6 @@ public class Dijkstra
     public void nextSem(List<Vertex> student){
     	
         List<Vertex> adjacencies = new ArrayList<Vertex>();
-
     	
     	for (int i = 0; i < student.size(); i++) {
     		if(student.get(i).adjacencies!=null){
