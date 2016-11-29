@@ -22,7 +22,7 @@ class Vertex implements Comparable<Vertex>
     
     public int compareTo(Vertex other)
     {
-        return Double.compare(minDistance, other.minDistance);
+        return Double.compare(semester, other.semester);
     }
 	
 	public Vertex (String key, String status){
@@ -114,8 +114,7 @@ public class Dijkstra
         }
     }
 
-    public List<Vertex> getShortestPathTo(Vertex target)
-    {
+    public List<Vertex> getShortestPathTo(Vertex target){
         List<Vertex> path = new ArrayList<Vertex>();
         for (Vertex vertex = target; vertex != null; vertex = vertex.previous)
             path.add(vertex);
@@ -123,7 +122,74 @@ public class Dijkstra
         Collections.reverse(path);
         return path;
     }
+    
+    public Vertex returnVertex(Vertex root, String vName){
+		
+        PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
+        Edge e = null;
+        vertexQueue.add(root);
+        Vertex vertexN = null;
+        
+    	while (!vertexQueue.isEmpty()){
+    		Vertex u = vertexQueue.poll();
+    		if (u.name.equals(vName) || u.key.equals(vName)){
+    			vertexN = u;
+    		}
+    		else{
+            // Visit each edge exiting u
+    		if(u.adjacencies!=null){
+    			for (int i = 0; i < u.adjacencies.size(); i++){
+            		e = u.adjacencies.get(i);
+					Vertex v = e.target;
+           				vertexQueue.add(v);
+           				}
+            		}
+    			}
+    	}
+		return vertexN;
+    }
+    
+    public boolean canI(List<Vertex> student, String subject, Vertex root){
+		
+    	List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
+    	boolean can = true;
+    	int cont = 0;
+    	
+    	for (int i = 0; i < require.size(); i++) {
+    		for (int j = 0; j < student.size(); j++) {
+				if(require.get(i) == student.get(j))
+					cont++;
+			}
+		}
+    	if (cont >= require.size()) {
+			can = true;
+		}else{
+			can = false;
+		}
+    	System.out.println(can);
+    	return can;
+    }
+    
+    public void nextSem(List<Vertex> student){
+    	
+        List<Vertex> adjacencies = new ArrayList<Vertex>();
 
-       
-   
+    	
+    	for (int i = 0; i < student.size(); i++) {
+    		if(student.get(i).adjacencies!=null){
+    			for (int j = 0; j < student.get(i).adjacencies.size(); j++) {
+    				if(!student.contains(student.get(i).adjacencies.get(j).target)){
+    					adjacencies.add(student.get(i).adjacencies.get(j).target);
+    				}
+    			}
+    		}
+		}
+    	System.out.println(adjacencies);
+    	Collections.sort(adjacencies);
+    	System.out.println(adjacencies);
+    	for (int i = adjacencies.size()-1; i > 5; i--) {
+			adjacencies.remove(i);
+		}
+    	System.out.println(adjacencies);
+    }
 }

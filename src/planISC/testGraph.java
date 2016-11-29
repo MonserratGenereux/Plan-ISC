@@ -1,13 +1,19 @@
 package planISC;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class testGraph {
 	
+	@SuppressWarnings("null")
 	public static void main(String[] args) {
 	
 
 		Dijkstra degree = new Dijkstra();
+		List<Vertex> student = new ArrayList<Vertex>();
+		String a = null;
+		Scanner in = new Scanner(System.in);
 
 		//Grafo Carrera
 		//Nodo Raíz
@@ -86,82 +92,115 @@ public class testGraph {
 		Vertex DHS2006 = new Vertex(9,"Ética Aplicada","HS2006");
 		
 		//Edges from root to semester 0
-		degree.addEdge(root, DTC1001, 1);
-		degree.addEdge(root, DF1001, 1);
-		degree.addEdge(root, DMA1001, 1);
-		degree.addEdge(root, DH1015, 1);
-		degree.addEdge(root, DH1001, 1);
-		degree.addEdge(root, DH1002, 1);
-		degree.addEdge(root, DH1003, 1);
-		degree.addEdge(root, DH1004, 1);
-		degree.addEdge(root, DH1005, 1);
-		degree.addEdge(root, DTC1023, 1);
-		degree.addEdge(root, DDS1003, 1);
-		degree.addEdge(root, DTC1019, 1);
-		degree.addEdge(root, DTC2019, 1);
-		degree.addEdge(root, DAD1005, 1);
-		degree.addEdge(root, DEM1005, 1);
-		degree.addEdge(root, DHS2005, 1);
-		degree.addEdge(root, DTC2007, 1);
-		degree.addEdge(root, DTI3035, 1);
-		degree.addEdge(root, DHS2006, 1);
+		degree.addEdge(root, DTC1001, 0);
+		degree.addEdge(root, DF1001, 0);
+		degree.addEdge(root, DMA1001, 0);
+		degree.addEdge(root, DH1015, 0);
+		degree.addEdge(root, DH1001, 0);
+		degree.addEdge(root, DTC1023, 0);
+		degree.addEdge(root, DDS1003, 0);
+		degree.addEdge(root, DTC1019, 0);
+		degree.addEdge(root, DTC2019, 0);
+		degree.addEdge(root, DAD1005, 0);
+		degree.addEdge(root, DEM1005, 0);
+		degree.addEdge(root, DHS2005, 0);
+		degree.addEdge(root, DTC2007, 0);
+		degree.addEdge(root, DTC2011, 0);
+		degree.addEdge(root, DTI3035, 0);
+		degree.addEdge(root, DHS2006, 0);
 		
 		//Edges between nodes in degree graph
-		degree.addEdge(DTC1001, DTC1014, 2);
-		degree.addEdge(DF1001, DF1002, 2);
-		degree.addEdge(DMA1001, DTC1003, 1);
-		degree.addEdge(DMA1001, DMA1015, 2);
-		degree.addEdge(DH1015, DH1040, 2);
-		degree.addEdge(DH1001, DH1002, 2);
-		degree.addEdge(DH1002, DH1003, 2);
-		degree.addEdge(DH1003, DH1004, 2);
-		degree.addEdge(DH1004, DH1005, 2);
-		degree.addEdge(DH1005, DH1016, 2);
-		degree.addEdge(DTC1014, DTC2016, 2);
-		degree.addEdge(DTC1014, DTC1016, 1);
-		degree.addEdge(DTC1014, DTC1015, 1);
-		degree.addEdge(DF1002, DF1005, 2);
-		degree.addEdge(DMA1015, DMA1017, 2);
-		degree.addEdge(DTC2016, DTC1018, 2);
-		degree.addEdge(DTC1016, DTC2008, 1);
-		degree.addEdge(DMA1017, DMA1019, 1);
-		degree.addEdge(DTC1016, DTC2018, 2);
-		degree.addEdge(DMA1017, DMA1006, 2);
-		degree.addEdge(DMA1017, DF1005, 2);
-		degree.addEdge(DMA1017, DMA2009, 2);
-		degree.addEdge(DMA1017, DMA1006, 2);
-		degree.addEdge(DH1040, DH1018, 1);
-		degree.addEdge(DH1040, DH2001, 2);
-		degree.addEdge(DH1040, DHS2000, 1);
-		degree.addEdge(DTC1018, DTC2017, 2);
-		degree.addEdge(DTC1018, DTC1021, 3);
-		degree.addEdge(DTC1018, DTC2020, 1);
-		degree.addEdge(DTC1019, DTC1020, 1);
-		degree.addEdge(DTC2017, DTC3022, 1);
-		degree.addEdge(DTC2017, DTC2025, 2);
-		degree.addEdge(DTC2018, DTC2027, 1);
-		degree.addEdge(DTC2018, DTC2022, 2);
-		degree.addEdge(DTC1020, DTC3041, 2);
-		degree.addEdge(DTC1020, DTC2004, 1);
-		degree.addEdge(DTC2008, DTC2025, 1);
-		degree.addEdge(DTC2008, DTC2027, 1);
-		degree.addEdge(DTC2022, DTC2026, 1);
-		degree.addEdge(DTC2020, DTC2006, 1);
-		degree.addEdge(DTC2004, DTC3002, 1);
-		degree.addEdge(DTC2004, DTC2024, 1);
-		degree.addEdge(DTC2004, DTC3045, 1);
-		degree.addEdge(DTC2004, DTC3049, 1);
-		degree.addEdge(DTI2011, DTC3002, 1);
-		degree.addEdge(DTC2024, DTC3054, 2);
-		degree.addEdge(DTC2026, DTC3052, 1);
-		degree.addEdge(DTC2006, DTC2011, 2);
-		degree.addEdge(DTC2006, DTC3048, 1);
+		degree.addEdge(DTC1001, DTC1014, 0);
+		degree.addEdge(DF1001, DF1002, 0);
+		degree.addEdge(DMA1001, DTC1003, 0);
+		degree.addEdge(DMA1001, DMA1015, 0);
+		degree.addEdge(DH1015, DH1040, 0);
+		degree.addEdge(DH1001, DH1002, 0);
+		degree.addEdge(DH1002, DH1003, 0);
+		degree.addEdge(DH1003, DH1004, 0);
+		degree.addEdge(DH1004, DH1005, 0);
+		degree.addEdge(DH1005, DH1016, 0);
+		degree.addEdge(DTC1014, DTC2016, 0);
+		degree.addEdge(DTC1014, DTC1016, 0);
+		degree.addEdge(DTC1014, DTC1015, 0);
+		degree.addEdge(DF1002, DF1005, 0);
+		degree.addEdge(DMA1015, DMA1017, 0);
+		degree.addEdge(DTC2016, DTC1018, 0);
+		degree.addEdge(DTC1016, DTC2008, 0);
+		degree.addEdge(DMA1017, DMA1019, 0);
+		degree.addEdge(DTC1016, DTC2018, 0);
+		degree.addEdge(DMA1017, DMA1006, 0);
+		degree.addEdge(DMA1017, DF1005, 0);
+		degree.addEdge(DMA1017, DMA2009, 0);
+		degree.addEdge(DH1040, DH1018, 0);
+		degree.addEdge(DH1040, DH2001, 0);
+		degree.addEdge(DH1040, DHS2000, 0);
+		degree.addEdge(DTC1018, DTC2017, 0);
+		degree.addEdge(DTC1018, DTC1021, 0);
+		degree.addEdge(DTC1018, DTC2020, 0);
+		degree.addEdge(DTC1019, DTC1020, 0);
+		degree.addEdge(DTC2017, DTC3022, 0);
+		degree.addEdge(DTC2017, DTC2025, 0);
+		degree.addEdge(DTC2018, DTC2027, 0);
+		degree.addEdge(DTC2018, DTC2022, 0);
+		degree.addEdge(DTC1020, DTC3041, 0);
+		degree.addEdge(DTC1020, DTC2004, 0);
+		degree.addEdge(DTC2008, DTC2025, 0);
+		degree.addEdge(DTC2008, DTC2027, 0);
+		degree.addEdge(DTC2022, DTC2026, 0);
+		degree.addEdge(DTC2020, DTC2006, 0);
+		degree.addEdge(DTC2004, DTC3002, 0);
+		degree.addEdge(DTC2004, DTC2024, 0);
+		degree.addEdge(DTC2004, DTC3045, 0);
+		degree.addEdge(DTC2004, DTC3049, 0);
+		degree.addEdge(DTI2011, DTC3002, 0);
+		degree.addEdge(DTC2024, DTC3054, 0);
+		degree.addEdge(DTC2026, DTC3052, 0);
+		degree.addEdge(DTC2006, DTC2011, 0);
+		degree.addEdge(DTC2006, DTC3048, 0);
+	
+		degree.computePaths(root); //"Crea" las conexiones en el árbol
 		
-
-		degree.computePaths(root);
-		List<Vertex> path = degree.getShortestPathTo(DTC2011);
-		System.out.println("Path: " + path);
+		student.add(root);
 		
+		student.add(DTC1001);
+		student.add(DF1001);
+		student.add(DMA1001);
+		student.add(DH1015);
+		student.add(DH1001);
+		student.add(DH1002);
+		student.add(DH1003);
+		student.add(DH1004);
+		student.add(DH1005);
+		
+		student.add(DTC1014);
+		student.add(DF1002);
+		student.add(DTC1003);
+		student.add(DMA1015);
+		student.add(DTC1023);
+		student.add(DDS1003);
+		student.add(DH1016);
+		
+		degree.canI(student, "Estructura de Datos", root);//Te dice si puede llevar una materia
+		degree.nextSem(student);
+		
+		List<Vertex> path = degree.getShortestPathTo(DTC3002);
+		//System.out.println("Path: " + path);
+		//List<Vertex> path = degree.getShortestPathTo(degree.returnVertex(root, "Programación Avanzada"));
+		//System.out.println("Path: " + path);
+		
+		/*while(true){
+			System.out.println("Ingresa las materias que ya cursaste: ");
+			a = in.nextLine();
+			if (a.equals("hola"))
+				break;
+			Vertex sub = degree.returnVertex(root, a);
+			
+			if (sub != null){
+				if(!student.contains(sub)){
+					student.add(sub);
+				}
+			}
+		}*/
 	}
-
 }
