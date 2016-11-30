@@ -1,4 +1,4 @@
-package planISCGUI;
+package planISC;
 
 import java.awt.EventQueue;
 
