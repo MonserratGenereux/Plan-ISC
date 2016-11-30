@@ -66,11 +66,11 @@ public class testGraph {
 		Vertex DTC2004 = new Vertex(5,"Análisis y Modelación de Sistemas de Software","TC2004");
 		Vertex DHS2000 = new Vertex(5,"Humanidades y Bellas Artes","HS2000");
 		//Semestre 6
-		Vertex DTC2025 = new Vertex(6,"Programación Avanzada","DTC2025");
-		Vertex DEM1005 = new Vertex(6,"Emprendimiento","DEM1005");
-		Vertex DTI2011 = new Vertex(6,"Evaluación y Administración de Proyectos","DTI2011");
-		Vertex DTC3041 = new Vertex(6,"Bases de Datos Avanzadas","DTI2011");
-		Vertex DTC2024 = new Vertex(6,"Proyecto de Desarrollo para Dispositivos Móviles","DTC2024");
+		Vertex DTC2025 = new Vertex(6,"Programación Avanzada","TC2025");
+		Vertex DEM1005 = new Vertex(6,"Emprendimiento","EM1005");
+		Vertex DTI2011 = new Vertex(6,"Evaluación y Administración de Proyectos","TI2011");
+		Vertex DTC3041 = new Vertex(6,"Bases de Datos Avanzadas","TC3041");
+		Vertex DTC2024 = new Vertex(6,"Proyecto de Desarrollo para Dispositivos Móviles","TC2024");
 		Vertex DTC3045 = new Vertex(6,"Calidad y Pruebas de Software","TC3045");
 		//Semestre 7
 		Vertex DTC2027 = new Vertex(7,"Seguridad Informática","TC2027");
@@ -105,7 +105,7 @@ public class testGraph {
 		degree.addEdge(root, DEM1005, 0);
 		degree.addEdge(root, DHS2005, 0);
 		degree.addEdge(root, DTC2007, 0);
-		degree.addEdge(root, DTC2011, 0);
+		degree.addEdge(root, DTI2011, 0);
 		degree.addEdge(root, DTI3035, 0);
 		degree.addEdge(root, DHS2006, 0);
 		
@@ -185,7 +185,9 @@ public class testGraph {
 		degree.nextSem(student);
 		
 		List<Vertex> path = degree.getShortestPathTo(DTC3002);
-		//System.out.println("Path: " + path);
+		System.out.println("Path: " + path);
+		degree.requirements(root, "Programación Avanzada");
+		
 		//List<Vertex> path = degree.getShortestPathTo(degree.returnVertex(root, "Programación Avanzada"));
 		//System.out.println("Path: " + path);
 		
