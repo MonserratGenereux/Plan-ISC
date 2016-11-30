@@ -47,8 +47,8 @@ class Vertex implements Comparable<Vertex>
 }
 
 
-class Edge
-{
+class Edge{
+	
     public final Vertex target;
     public final double weight;
     
@@ -58,34 +58,20 @@ class Edge
     }
 }
 
-public class Dijkstra
-{
-	public void addVertexStudent(Vertex vertex){
-		 new Vertex(vertex.key, vertex.status);
-	}
-	
-	public void addVertexDegree(Vertex vertex){
-		 new Vertex(vertex.semester,vertex.key, vertex.name);
-	}
-	
-	public void addVertexSystem(Vertex vertex){
-		 new Vertex(vertex.key,vertex.name, vertex.info);
-	}
+public class Dijkstra{
 	
 	public void addEdge(Vertex vertexInicio, Vertex vertexFinal,double weight){
 		Edge edge = new Edge(vertexFinal, weight);
 		if (vertexInicio.adjacencies == null) {
 			vertexInicio.adjacencies = new LinkedList<Edge>();
 			vertexInicio.adjacencies.add(edge);
-		}else{
-				vertexInicio.adjacencies.add(edge);
-				}
-			
-			
+		}
+		else{
+			vertexInicio.adjacencies.add(edge);
+		}	
 	}	
 	
-    public void computePaths(Vertex source)
-    {
+    public void computePaths(Vertex source){
     	
         source.minDistance = 0.;
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
@@ -94,7 +80,6 @@ public class Dijkstra
 
     while (!vertexQueue.isEmpty()) {
         Vertex u = vertexQueue.poll();
-            // Visit each edge exiting u
         if (u.adjacencies != null){
         	for (int i = 0; i < u.adjacencies.size(); i++){
             		e = u.adjacencies.get(i);
@@ -114,15 +99,6 @@ public class Dijkstra
         }
     }
 
-    public List<Vertex> getShortestPathTo(Vertex target){
-        List<Vertex> path = new ArrayList<Vertex>();
-        for (Vertex vertex = target; vertex != null; vertex = vertex.previous)
-            path.add(vertex);
-
-        Collections.reverse(path);
-        return path;
-    }
-    
     public Vertex returnVertex(Vertex root, String vName){
 		
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
@@ -136,7 +112,6 @@ public class Dijkstra
     			vertexN = u;
     		}
     		else{
-            // Visit each edge exiting u
     		if(u.adjacencies!=null){
     			for (int i = 0; i < u.adjacencies.size(); i++){
             		e = u.adjacencies.get(i);
@@ -147,6 +122,43 @@ public class Dijkstra
     			}
     	}
 		return vertexN;
+    }
+    
+    public void requirements(Vertex root, String vName){
+    	PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
+    	List<Vertex> requirements = new ArrayList<Vertex>();
+        Edge e = null;
+        vertexQueue.add(root);
+        Vertex subject = returnVertex(root, vName);
+        
+    	while (!vertexQueue.isEmpty()){
+    		Vertex u = vertexQueue.poll();
+    		if (u.adjacencies!=null) {
+    			for (int i = 0; i < u.adjacencies.size(); i++) {
+    				vertexQueue.add(u.adjacencies.get(i).target);
+            		if(u.adjacencies.get(i).target == subject){
+            			requirements.addAll(getShortestPathTo(u));
+            		}
+        		}
+			}
+    		
+    		for (int i = 0; i < requirements.size(); i++) {
+				for (int j = i+1; j < requirements.size(); j++) {
+					if (requirements.get(i)==requirements.get(j)) {
+						requirements.remove(j);
+					}
+				}
+			}
+    	}
+    }
+    
+    public List<Vertex> getShortestPathTo(Vertex target){
+        List<Vertex> path = new ArrayList<Vertex>();
+        for (Vertex vertex = target; vertex != null; vertex = vertex.previous)
+            path.add(vertex);
+
+        Collections.reverse(path);
+        return path;
     }
     
     public boolean canI(List<Vertex> student, String subject, Vertex root){
@@ -183,12 +195,9 @@ public class Dijkstra
     			}
     		}
 		}
-    	System.out.println(adjacencies);
-    	Collections.sort(adjacencies);
-    	System.out.println(adjacencies);
+    	
     	for (int i = adjacencies.size()-1; i > 5; i--) {
 			adjacencies.remove(i);
 		}
-    	System.out.println(adjacencies);
     }
 }
