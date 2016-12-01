@@ -196,10 +196,12 @@ public class Dijkstra{
     			}
     		}
 		}
-    	
-    	for (int i = adjacencies.size()-1; i > 5; i--) {
+
+    	Collections.sort(adjacencies);
+    	for (int i = adjacencies.size()-1; i >= 6; i--) {
 			adjacencies.remove(i);
 		}
+
     	return adjacencies;
     }
 }

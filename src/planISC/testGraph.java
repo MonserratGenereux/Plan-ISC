@@ -23,7 +23,13 @@ public class testGraph {
 		
 		List<Vertex> path = degree.getShortestPathTo(DTC3002);
 		System.out.println("Path: " + path);
-		degree.requirements(root, "Programación Avanzada");*/
+		degree.requirements(root, "Programación Avanzada");
+		degree.canI(student, "Estructura de Datos", root);//Te dice si puede llevar una materia
+		System.out.println(degree.nextSem(student));
+		
+		List<Vertex> path = degree.getShortestPathTo(DTC3002);
+		//System.out.println("Path: " + path);
+		degree.requirements(root, "Programación Avanzada");
 		
 		//List<Vertex> path = degree.getShortestPathTo(degree.returnVertex(root, "Programación Avanzada"));
 		//System.out.println("Path: " + path);
