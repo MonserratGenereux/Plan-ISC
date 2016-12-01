@@ -124,10 +124,9 @@ public class Dijkstra{
 		return vertexN;
     }
     
-    public void requirements(Vertex root, String vName){
+    public List<Vertex> requirements(Vertex root, String vName){
     	PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
     	List<Vertex> requirements = new ArrayList<Vertex>();
-        Edge e = null;
         vertexQueue.add(root);
         Vertex subject = returnVertex(root, vName);
         
@@ -141,15 +140,17 @@ public class Dijkstra{
             		}
         		}
 			}
-    		
-    		for (int i = 0; i < requirements.size(); i++) {
-				for (int j = i+1; j < requirements.size(); j++) {
-					if (requirements.get(i)==requirements.get(j)) {
-						requirements.remove(j);
-					}
+    	}
+    	
+    	for (int i = 0; i < requirements.size(); i++) {
+			for (int j = i+1; j < requirements.size(); j++) {
+				if (requirements.get(i)==requirements.get(j)) {
+					requirements.remove(j);
 				}
 			}
-    	}
+		}
+    	
+		return requirements;
     }
     
     public List<Vertex> getShortestPathTo(Vertex target){
@@ -182,7 +183,7 @@ public class Dijkstra{
     	return can;
     }
     
-    public void nextSem(List<Vertex> student){
+    public List<Vertex> nextSem(List<Vertex> student){
     	
         List<Vertex> adjacencies = new ArrayList<Vertex>();
     	
@@ -199,5 +200,6 @@ public class Dijkstra{
     	for (int i = adjacencies.size()-1; i > 5; i--) {
 			adjacencies.remove(i);
 		}
+    	return adjacencies;
     }
 }

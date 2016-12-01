@@ -1,34 +1,22 @@
 package planISC;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JCheckBox;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
 import javax.swing.JLabel;
-
-import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
-import javax.swing.Box;
 
 public class Remedials {
 
 	JFrame frame;
 	Vertex root;
 	List<Vertex> student;
-
 	public Remedials() {
 		initialize();
 	}
@@ -36,11 +24,10 @@ public class Remedials {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	void initialize() {
 		Dijkstra degree = new Dijkstra();
 		student = new ArrayList<Vertex>();
-		String a = null;
-		Scanner in = new Scanner(System.in);
+		
 
 		//Grafo Carrera
 		//Nodo Raíz
@@ -506,18 +493,9 @@ public class Remedials {
 						student.add(DTC3054);
 					}if(chckbxticaAplicada.isSelected()==true){
 						student.add(DHS2006);
-					}	
+					}
+					frame.setVisible(false);
 					
-					
-					btnSave.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							if(e.getSource()==btnSave){
-								materia window = new materia();
-								window.frame.setVisible(true);
-								frame.setVisible(false);
-							}
-						}
-					});
 				}
 			}
 		});
@@ -841,4 +819,8 @@ public class Remedials {
 	public Vertex root(){
 		return root;
 	}
+	public List<Vertex> listaAlum(){
+		return student;
+	}
+	
 }

@@ -1,13 +1,9 @@
 package planISC;
 
 import java.awt.EventQueue;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class testGraph {
 	
-	@SuppressWarnings("null")
 	public static void main(String[] args) {
 		
 		EventQueue.invokeLater(new Runnable() {
@@ -21,8 +17,6 @@ public class testGraph {
 			}
 			
 		});
-
-		
 		
 /*		degree.canI(student, "Estructura de Datos", root);//Te dice si puede llevar una materia
 		degree.nextSem(student);

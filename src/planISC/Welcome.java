@@ -1,18 +1,13 @@
 package planISC;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
-
 import java.awt.Font;
-
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -53,8 +48,8 @@ public class Welcome {
 		btnEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==btnEnter){
-					Courses window = new Courses();
-					window.frame.setVisible(true);
+					materia window = new materia();
+					window.frame.setVisible(false);
 					frame.setVisible(false);
 				}
 			}

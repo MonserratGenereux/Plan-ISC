@@ -9,12 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JTextArea;
-
 import java.awt.Color;
-
 import javax.swing.JLabel;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
@@ -34,7 +30,7 @@ public class materia {
 			public void run() {
 				try {
 					materia window = new materia();
-					window.frame.setVisible(true);
+					window.frame.setVisible(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -46,7 +42,9 @@ public class materia {
 	 * Create the application.
 	 */
 	public materia() {
+		root.frame.setVisible(true);
 		initialize();
+		
 	}
 
 	/**
@@ -59,6 +57,7 @@ public class materia {
 		frame.setBounds(100, 100, 338, 224);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		frame.setVisible(true);
 		textField = new JTextField();
 		textField.setColumns(10);
 		
@@ -73,7 +72,7 @@ public class materia {
 		JButton btnRec = new JButton("Recomendation");
 		btnRec.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(frame, grafo.nextSem(root.student));
+			JOptionPane.showMessageDialog(frame, grafo.nextSem(root.listaAlum()));
 
 			}
 		});
@@ -83,7 +82,8 @@ public class materia {
 		JButton btnEsRequisitoPara = new JButton("This is requirement for:");
 		btnEsRequisitoPara.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				JOptionPane.showMessageDialog(frame, grafo.returnVertex(root.root,textField.getText()).adjacencies);
+
 			}
 		});
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
