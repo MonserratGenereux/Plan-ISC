@@ -182,10 +182,10 @@ public class testGraph {
 		student.add(DH1016);
 		
 		degree.canI(student, "Estructura de Datos", root);//Te dice si puede llevar una materia
-		degree.nextSem(student);
+		System.out.println(degree.nextSem(student));
 		
 		List<Vertex> path = degree.getShortestPathTo(DTC3002);
-		System.out.println("Path: " + path);
+		//System.out.println("Path: " + path);
 		degree.requirements(root, "Programación Avanzada");
 		
 		//List<Vertex> path = degree.getShortestPathTo(degree.returnVertex(root, "Programación Avanzada"));

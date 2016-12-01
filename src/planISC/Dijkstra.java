@@ -184,7 +184,7 @@ public class Dijkstra{
     	return can;
     }
     
-    public void nextSem(List<Vertex> student){
+    public List<Vertex> nextSem(List<Vertex> student){
     	
         List<Vertex> adjacencies = new ArrayList<Vertex>();
     	
@@ -197,9 +197,12 @@ public class Dijkstra{
     			}
     		}
 		}
-    	
-    	for (int i = adjacencies.size()-1; i > 5; i--) {
+
+    	Collections.sort(adjacencies);
+    	for (int i = adjacencies.size()-1; i >= 6; i--) {
 			adjacencies.remove(i);
 		}
+    	
+    	return adjacencies;
     }
 }
