@@ -4,19 +4,29 @@ import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.awt.Font;
+
+import javax.swing.JTextField;
 
 public class Remedials {
 
 	JFrame frame;
 	Vertex root;
 	List<Vertex> student;
+	private JTextField textField;
+	Dijkstra grafo = new Dijkstra();
 	public Remedials() {
 		initialize();
 	}
@@ -196,38 +206,54 @@ public class Remedials {
 		JLabel lblNewLabel = new JLabel("Remedials");
 		
 		JCheckBox chckbxIntroduccinALa = new JCheckBox("Introducción a la computación");
+		chckbxIntroduccinALa.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		
 		JCheckBox chckbxIntroduccinALa_1 = new JCheckBox("Introducción a la física");
+		chckbxIntroduccinALa_1.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		
 		JCheckBox chckbxIntrouccinALas = new JCheckBox("Introducción a las matemáticas");
+		chckbxIntrouccinALas.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		
 		JCheckBox chckbxInglsRemedial = new JCheckBox("Inglés remedial 1");
+		chckbxInglsRemedial.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		
 		JCheckBox chckbxInglsRemedial_1 = new JCheckBox("Inglés remedial 2");
+		chckbxInglsRemedial_1.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		
 		JCheckBox chckbxInglesRemedial = new JCheckBox("Inglés remedial 3");
+		chckbxInglesRemedial.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		
 		JCheckBox chckbxInglsRemedial_2 = new JCheckBox("Inglés remedial 4");
+		chckbxInglsRemedial_2.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		
 		JCheckBox chckbxInglsRemedial_3 = new JCheckBox("Inglés remedial 5");
+		chckbxInglsRemedial_3.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		
 		JCheckBox chckbxFundamentosDeEscritura = new JCheckBox("Fundamentos de escritura");
+		chckbxFundamentosDeEscritura.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		//Primer semestre
 				JLabel lblSemester = new JLabel("Semester 1");
 				
 				JCheckBox chckbxFundamentosProg = new JCheckBox("Fundamentos de Programación");
+				chckbxFundamentosProg.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxFsica = new JCheckBox("Física 1");
+				chckbxFsica.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxMatemticasDiscretas = new JCheckBox("Matemáticas Discretas");
+				chckbxMatemticasDiscretas.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxMatemticas = new JCheckBox("Matemáticas 1");
+				chckbxMatemticas.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxIntroduccinALa_2 = new JCheckBox("Introducción a la Ingeniería en Sistemas Computacionales");
+				chckbxIntroduccinALa_2.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxCienciasNat = new JCheckBox("Ciencias Naturales y Desarrollo Sustentable");
+				chckbxCienciasNat.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxLenguaExtranjera = new JCheckBox("Lengua Extranjera");
+				chckbxLenguaExtranjera.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				
 				
@@ -235,276 +261,381 @@ public class Remedials {
 				JLabel lblSemester_1 = new JLabel("Semester 2");
 				
 				JCheckBox chckbxProgramacinOrientadaA = new JCheckBox("Programación Orientada a Objetos");
+				chckbxProgramacinOrientadaA.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxOrganizacinComputacional = new JCheckBox("Organización Computacional");
+				chckbxOrganizacinComputacional.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxMatemticas_1 = new JCheckBox("Matemáticas 2");
+				chckbxMatemticas_1.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxFundamentosDeDiseo = new JCheckBox("Fundamentos de Diseño Interactivo");
+				chckbxFundamentosDeDiseo.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxAdministracinEInnovacin = new JCheckBox("Administración e Innovación en Modelos de Negocio");
+				chckbxAdministracinEInnovacin.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxAnlisisYExpresin = new JCheckBox("Análisis y Expresión Verbal");
+				chckbxAnlisisYExpresin.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				//Semestre 3
 				
 				JLabel lblSemester_2 = new JLabel("Semester 3");
 				
 				JCheckBox chckbxEstructuraDeDatos = new JCheckBox("Estructura de Datos");
+				chckbxEstructuraDeDatos.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxProbabilidadYEstadstica = new JCheckBox("Probabilidad y estadística");
+				chckbxProbabilidadYEstadstica.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxElectricidadYMagnetismo = new JCheckBox("Electricidad y Magnetismo");
+				chckbxElectricidadYMagnetismo.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxMatemticas_2 = new JCheckBox("Matemáticas 3");
+				chckbxMatemticas_2.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxFundamentosDeIngeniera = new JCheckBox("Fundamentos de Ingeniería de Software");
+				chckbxFundamentosDeIngeniera.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxticaPersonaY = new JCheckBox("Ética, Persona y Sociedad");
+				chckbxticaPersonaY.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				//Semester 4
 				
 				JLabel lblSemester_3 = new JLabel("Semester 4");
 				
 				JCheckBox chckbxAnlisisYDiseo = new JCheckBox("Análisis y Diseño de Algoritmos");
+				chckbxAnlisisYDiseo.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxProyectoDeDesarrollo = new JCheckBox("Proyecto de Desarrollo de Videojuegos");
+				chckbxProyectoDeDesarrollo.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxFundamentosDeRedes = new JCheckBox("Fundamentos de Redes");
+				chckbxFundamentosDeRedes.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxMtodosNumricosEn = new JCheckBox("Métodos Numéricos en Ingeniería");
+				chckbxMtodosNumricosEn.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxBasesDeDatos = new JCheckBox("Bases de Datos");
+				chckbxBasesDeDatos.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxExpresinVerbalEn = new JCheckBox("Expresión Verbal en el Ámbito Profesional");
+				chckbxExpresinVerbalEn.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				//Semester 5
 				
 				JLabel lblSemester_4 = new JLabel("Semester 5");
 				
 				JCheckBox chckbxSistemasOperativos = new JCheckBox("Sistemas Operativos");
+				chckbxSistemasOperativos.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxlgebraLineal = new JCheckBox("Álgebra Lineal");
+				chckbxlgebraLineal.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxInterconexinDeRedes = new JCheckBox("Interconexión de Redes");
+				chckbxInterconexinDeRedes.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxMatemticasComputacionales = new JCheckBox("Matemáticas Computacionales");
+				chckbxMatemticasComputacionales.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxAnlisisYModelacin = new JCheckBox("Análisis y Modelación de Sistemas de Software");
+				chckbxAnlisisYModelacin.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxHumanidadesYBellas = new JCheckBox("Humanidades y Bellas Artes");
+				chckbxHumanidadesYBellas.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				//Semester 6
 				JLabel lblSemester_5 = new JLabel("Semester 6");
-				
 				JCheckBox chckbxProgramacinAvanzada = new JCheckBox("Programación Avanzada");
+				chckbxProgramacinAvanzada.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxEmprendimiento = new JCheckBox("Emprendimiento");
+				chckbxEmprendimiento.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxEvaluacinYAdministracin = new JCheckBox("Evaluación y Administración de Proyectos");
+				chckbxEvaluacinYAdministracin.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxBasesDeDatos_1 = new JCheckBox("Bases de Datos Avanzadas");
+				chckbxBasesDeDatos_1.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxProyectoDeDesarrollo_1 = new JCheckBox("Proyecto de Desarrollo para Dispositivos Móviles");
+				chckbxProyectoDeDesarrollo_1.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxCalidadYPruebas = new JCheckBox("Calidad y Pruebas de Software");
+				chckbxCalidadYPruebas.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				//semester 7
 				
 				JLabel lblSemester_6 = new JLabel("Semester 7");
 				
 				JCheckBox chckbxTpicos = new JCheckBox("Tópicos 1");
+				chckbxTpicos.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxSeguridadInformtica = new JCheckBox("Seguridad Informática");
+				chckbxSeguridadInformtica.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxAdministracinDeProyectos = new JCheckBox("Administración de Proyectos de Ingeniería de SW");
+				chckbxAdministracinDeProyectos.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxDesarrolloDeAplicaciones = new JCheckBox("Desarrollo de Aplicaciones Web");
+				chckbxDesarrolloDeAplicaciones.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxLenguajesDeProgramacin = new JCheckBox("Lenguajes de Programación");
+				chckbxLenguajesDeProgramacin.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxCiudadania = new JCheckBox("Ciudadania");
+				chckbxCiudadania.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				//Semester 8
 				
 				
 				JLabel lblSemester_7 = new JLabel("Semester 8");
 				
 				JCheckBox chckbxGrficasComputacionales = new JCheckBox("Gráficas Computacionales");
+				chckbxGrficasComputacionales.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxMtodosCuantitativosY = new JCheckBox("Métodos Cuantitativos y Simulación");
+				chckbxMtodosCuantitativosY.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxTpicos_1 = new JCheckBox("Tópicos 2");
+				chckbxTpicos_1.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxLaboratorioDeDesarrollo = new JCheckBox("Laboratorio de Desarrollo de Aplicaciones Web");
+				chckbxLaboratorioDeDesarrollo.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxDiseoDeCompiadores = new JCheckBox("Diseño de Compiadores");
+				chckbxDiseoDeCompiadores.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxDiseoYArquitectura = new JCheckBox("Diseño y Arquitectura de Software");
+				chckbxDiseoYArquitectura.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxTpicos_2 = new JCheckBox("Tópicos 3");
+				chckbxTpicos_2.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				
 				//Semester 9
 				JLabel lblSemester_8 = new JLabel("Semester 9");
 				
 				JCheckBox chckbxTpicos_3 = new JCheckBox("Tópicos 4");
+				chckbxTpicos_3.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxTpicos_4 = new JCheckBox("Tópicos 5");
+				chckbxTpicos_4.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxTpicos_5 = new JCheckBox("Tópicos 6");
+				chckbxTpicos_5.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxIntroduccinALa_3 = new JCheckBox("Introducción a la vida Profesional");
+				chckbxIntroduccinALa_3.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxSistemasInteligentes = new JCheckBox("Sistemas Inteligentes");
+				chckbxSistemasInteligentes.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxProyectoIntegradorPara = new JCheckBox("Proyecto Integrador para el Desarrollo de Soluciones Empresariales");
+				chckbxProyectoIntegradorPara.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				JCheckBox chckbxticaAplicada = new JCheckBox("Ética Aplicada");
+				chckbxticaAplicada.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
-		JButton btnSave = new JButton("Save");
-		
-		btnSave.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource()==btnSave){
-					if(chckbxIntroduccinALa.isSelected()==true){
-						student.add(DTC1001);
-					}if(chckbxIntroduccinALa_1.isSelected()==true){
-						student.add(DF1001);
-					}if(chckbxIntrouccinALas.isSelected()==true){
-						student.add(DMA1001);
-					}if(chckbxInglesRemedial.isSelected()==true){
-						student.add(DH1001);
-					}if(chckbxInglsRemedial_1.isSelected()==true){
-						student.add(DH1002);
-					}if(chckbxInglesRemedial .isSelected()==true){
-						student.add(DH1003);
-					}if(chckbxInglsRemedial_2.isSelected()==true){
-						student.add(DH1004);
-					}if(chckbxInglsRemedial_3.isSelected()==true){
-						student.add(DH1005);
-					}if(chckbxFundamentosDeEscritura.isSelected()==true){
-						student.add(DH1015);
-					}if(chckbxFundamentosProg.isSelected()==true){
-						student.add(DTC1014);
-					}if(chckbxFsica.isSelected()==true){
-						student.add(DF1002);
-					}if(chckbxMatemticasDiscretas.isSelected()==true){
-						student.add(DTC1003);
-					}if(chckbxMatemticas.isSelected()==true){
-						student.add(DMA1015);
-					}if(chckbxIntroduccinALa_2.isSelected()==true){
-						student.add(DTC1023);
-					}if(chckbxCienciasNat.isSelected()==true){
-						student.add(DDS1003);
-					}if(chckbxLenguaExtranjera.isSelected()==true){
-						student.add(DH1016);
-					}if(chckbxProgramacinOrientadaA.isSelected()==true){
-						student.add(DTC2016);
-					}if(chckbxOrganizacinComputacional.isSelected()==true){
-						student.add(DTC1016);
-					}if(chckbxMatemticas_1.isSelected()==true){
-						student.add(DMA1017);
-					}if(chckbxFundamentosDeDiseo.isSelected()==true){
-						student.add(DTC1015);
-					}if(chckbxAdministracinEInnovacin.isSelected()==true){
-						student.add(DAD1005);
-					}if(chckbxAnlisisYExpresin.isSelected()==true){
-						student.add(DH1040);
-					}if(chckbxEstructuraDeDatos.isSelected()==true){
-						student.add(DTC1018);
-					}if(chckbxProbabilidadYEstadstica.isSelected()==true){
-						student.add(DMA1006);
-					}if(chckbxElectricidadYMagnetismo.isSelected()==true){
-						student.add(DF1005);
-					}if(chckbxMatemticas_2.isSelected()==true){
-						student.add(DMA2009);
-					}if(chckbxFundamentosDeIngeniera.isSelected()==true){
-						student.add(DTC1019);
-					}if(chckbxticaPersonaY.isSelected()==true){
-						student.add(DH1018);
-					}if(chckbxAnlisisYDiseo.isSelected()==true){
-						student.add(DTC2017);
-					}if(chckbxProyectoDeDesarrollo.isSelected()==true){
-						student.add(DTC1021);
-					}if(chckbxFundamentosDeRedes.isSelected()==true){
-						student.add(DTC2018);
-					}if(chckbxMtodosNumricosEn.isSelected()==true){
-						student.add(DTC2019);
-					}if(chckbxBasesDeDatos.isSelected()==true){
-						student.add(DTC1020);
-					}if(chckbxExpresinVerbalEn.isSelected()==true){
-						student.add(DH2001);
-					}if(chckbxSistemasOperativos.isSelected()==true){
-						student.add(DTC2008);
-					}if(chckbxlgebraLineal.isSelected()==true){
-						student.add(DMA1019);
-					}if(chckbxInterconexinDeRedes.isSelected()==true){
-						student.add(DTC2022);
-					}if(chckbxMatemticasComputacionales.isSelected()==true){
-						student.add(DTC2020);
-					}if(chckbxAnlisisYModelacin.isSelected()==true){
-						student.add(DTC2004);
-					}if(chckbxHumanidadesYBellas.isSelected()==true){
-						student.add(DHS2000);
-					}if(chckbxProgramacinAvanzada.isSelected()==true){
-						student.add(DTC2025);
-					}if(chckbxEmprendimiento.isSelected()==true){
-						student.add(DEM1005);
-					}if(chckbxEvaluacinYAdministracin.isSelected()==true){
-						student.add(DTI2011);
-					}if(chckbxBasesDeDatos_1.isSelected()==true){
-						student.add(DTC3041);
-					}if(chckbxProyectoDeDesarrollo_1.isSelected()==true){
-						student.add(DTC2024);
-					}if(chckbxCalidadYPruebas.isSelected()==true){
-						student.add(DTC3045);
-					}if(chckbxTpicos.isSelected()==true){
-						student.add(DVA2010);
-					}if(chckbxSeguridadInformtica.isSelected()==true){
-						student.add(DTC2027);
-					}if(chckbxAdministracinDeProyectos.isSelected()==true){
-						student.add(DTC3002);
-					}if(chckbxDesarrolloDeAplicaciones.isSelected()==true){
-						student.add(DTC2026);
-					}if(chckbxLenguajesDeProgramacin.isSelected()==true){
-						student.add(DTC2006);
-					}if(chckbxCiudadania.isSelected()==true){
-						student.add(DHS2005);
-					}if(chckbxGrficasComputacionales.isSelected()==true){
-						student.add(DTC3022);
-					}if(chckbxMtodosCuantitativosY.isSelected()==true){
-						student.add(DTC2007);
-					}if(chckbxTpicos_1.isSelected()==true){
-						student.add(DVA2011);
-					}if(chckbxLaboratorioDeDesarrollo.isSelected()==true){
-						student.add(DTC3052);
-					}if(chckbxDiseoDeCompiadores.isSelected()==true){
-						student.add(DTC3048);
-					}if(chckbxDiseoYArquitectura.isSelected()==true){
-						student.add(DTC3049);
-					}if(chckbxTpicos_2.isSelected()==true){
-						student.add(DVA2012);
-					}if(chckbxTpicos_3.isSelected()==true){
-						student.add(DVA2013);
-					}if(chckbxTpicos_4.isSelected()==true){
-						student.add(DVA2014);
-					}if(chckbxTpicos_5.isSelected()==true){
-						student.add(DVA2015);
-					}if(chckbxIntroduccinALa_3.isSelected()==true){
-						student.add(DTI3035);
-					}if(chckbxSistemasInteligentes.isSelected()==true){
-						student.add(DTC2011);
-					}if(chckbxProyectoIntegradorPara.isSelected()==true){
-						student.add(DTC3054);
-					}if(chckbxticaAplicada.isSelected()==true){
-						student.add(DHS2006);
+				JButton btnSaveResults = new JButton("Save Results");
+				btnSaveResults.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						if(e.getSource()==btnSaveResults)
+							if(chckbxIntroduccinALa.isSelected()==true){
+								student.add(DTC1001);
+							}if(chckbxIntroduccinALa_1.isSelected()==true){
+								student.add(DF1001);
+							}if(chckbxIntrouccinALas.isSelected()==true){
+								student.add(DMA1001);
+							}if(chckbxInglesRemedial.isSelected()==true){
+								student.add(DH1001);
+							}if(chckbxInglsRemedial_1.isSelected()==true){
+								student.add(DH1002);
+							}if(chckbxInglesRemedial .isSelected()==true){
+								student.add(DH1003);
+							}if(chckbxInglsRemedial_2.isSelected()==true){
+								student.add(DH1004);
+							}if(chckbxInglsRemedial_3.isSelected()==true){
+								student.add(DH1005);
+							}if(chckbxFundamentosDeEscritura.isSelected()==true){
+								student.add(DH1015);
+							}if(chckbxFundamentosProg.isSelected()==true){
+								student.add(DTC1014);
+							}if(chckbxFsica.isSelected()==true){
+								student.add(DF1002);
+							}if(chckbxMatemticasDiscretas.isSelected()==true){
+								student.add(DTC1003);
+							}if(chckbxMatemticas.isSelected()==true){
+								student.add(DMA1015);
+							}if(chckbxIntroduccinALa_2.isSelected()==true){
+								student.add(DTC1023);
+							}if(chckbxCienciasNat.isSelected()==true){
+								student.add(DDS1003);
+							}if(chckbxLenguaExtranjera.isSelected()==true){
+								student.add(DH1016);
+							}if(chckbxProgramacinOrientadaA.isSelected()==true){
+								student.add(DTC2016);
+							}if(chckbxOrganizacinComputacional.isSelected()==true){
+								student.add(DTC1016);
+							}if(chckbxMatemticas_1.isSelected()==true){
+								student.add(DMA1017);
+							}if(chckbxFundamentosDeDiseo.isSelected()==true){
+								student.add(DTC1015);
+							}if(chckbxAdministracinEInnovacin.isSelected()==true){
+								student.add(DAD1005);
+							}if(chckbxAnlisisYExpresin.isSelected()==true){
+								student.add(DH1040);
+							}if(chckbxEstructuraDeDatos.isSelected()==true){
+								student.add(DTC1018);
+							}if(chckbxProbabilidadYEstadstica.isSelected()==true){
+								student.add(DMA1006);
+							}if(chckbxElectricidadYMagnetismo.isSelected()==true){
+								student.add(DF1005);
+							}if(chckbxMatemticas_2.isSelected()==true){
+								student.add(DMA2009);
+							}if(chckbxFundamentosDeIngeniera.isSelected()==true){
+								student.add(DTC1019);
+							}if(chckbxticaPersonaY.isSelected()==true){
+								student.add(DH1018);
+							}if(chckbxAnlisisYDiseo.isSelected()==true){
+								student.add(DTC2017);
+							}if(chckbxProyectoDeDesarrollo.isSelected()==true){
+								student.add(DTC1021);
+							}if(chckbxFundamentosDeRedes.isSelected()==true){
+								student.add(DTC2018);
+							}if(chckbxMtodosNumricosEn.isSelected()==true){
+								student.add(DTC2019);
+							}if(chckbxBasesDeDatos.isSelected()==true){
+								student.add(DTC1020);
+							}if(chckbxExpresinVerbalEn.isSelected()==true){
+								student.add(DH2001);
+							}if(chckbxSistemasOperativos.isSelected()==true){
+								student.add(DTC2008);
+							}if(chckbxlgebraLineal.isSelected()==true){
+								student.add(DMA1019);
+							}if(chckbxInterconexinDeRedes.isSelected()==true){
+								student.add(DTC2022);
+							}if(chckbxMatemticasComputacionales.isSelected()==true){
+								student.add(DTC2020);
+							}if(chckbxAnlisisYModelacin.isSelected()==true){
+								student.add(DTC2004);
+							}if(chckbxHumanidadesYBellas.isSelected()==true){
+								student.add(DHS2000);
+							}if(chckbxProgramacinAvanzada.isSelected()==true){
+								student.add(DTC2025);
+							}if(chckbxEmprendimiento.isSelected()==true){
+								student.add(DEM1005);
+							}if(chckbxEvaluacinYAdministracin.isSelected()==true){
+								student.add(DTI2011);
+							}if(chckbxBasesDeDatos_1.isSelected()==true){
+								student.add(DTC3041);
+							}if(chckbxProyectoDeDesarrollo_1.isSelected()==true){
+								student.add(DTC2024);
+							}if(chckbxCalidadYPruebas.isSelected()==true){
+								student.add(DTC3045);
+							}if(chckbxTpicos.isSelected()==true){
+								student.add(DVA2010);
+							}if(chckbxSeguridadInformtica.isSelected()==true){
+								student.add(DTC2027);
+							}if(chckbxAdministracinDeProyectos.isSelected()==true){
+								student.add(DTC3002);
+							}if(chckbxDesarrolloDeAplicaciones.isSelected()==true){
+								student.add(DTC2026);
+							}if(chckbxLenguajesDeProgramacin.isSelected()==true){
+								student.add(DTC2006);
+							}if(chckbxCiudadania.isSelected()==true){
+								student.add(DHS2005);
+							}if(chckbxGrficasComputacionales.isSelected()==true){
+								student.add(DTC3022);
+							}if(chckbxMtodosCuantitativosY.isSelected()==true){
+								student.add(DTC2007);
+							}if(chckbxTpicos_1.isSelected()==true){
+								student.add(DVA2011);
+							}if(chckbxLaboratorioDeDesarrollo.isSelected()==true){
+								student.add(DTC3052);
+							}if(chckbxDiseoDeCompiadores.isSelected()==true){
+								student.add(DTC3048);
+							}if(chckbxDiseoYArquitectura.isSelected()==true){
+								student.add(DTC3049);
+							}if(chckbxTpicos_2.isSelected()==true){
+								student.add(DVA2012);
+							}if(chckbxTpicos_3.isSelected()==true){
+								student.add(DVA2013);
+							}if(chckbxTpicos_4.isSelected()==true){
+								student.add(DVA2014);
+							}if(chckbxTpicos_5.isSelected()==true){
+								student.add(DVA2015);
+							}if(chckbxIntroduccinALa_3.isSelected()==true){
+								student.add(DTI3035);
+							}if(chckbxSistemasInteligentes.isSelected()==true){
+								student.add(DTC2011);
+							}if(chckbxProyectoIntegradorPara.isSelected()==true){
+								student.add(DTC3054);
+							}if(chckbxticaAplicada.isSelected()==true){
+								student.add(DHS2006);
+							}
 					}
-					frame.setVisible(false);
-					
+				});
+				
+							
+				
+				
+		
+		JLabel lblEnterTheKey = new JLabel("Enter the key or name of the subject:");
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		
+		JButton btnThisIsRequirement = new JButton("This is Requirement for course ...");
+		btnThisIsRequirement.addActionListener(new ActionListener() {
+			String req = "";
+			public void actionPerformed(ActionEvent e) {
+				if(grafo.returnVertex(root, textField.getText()).adjacencies==null){
+					JOptionPane.showMessageDialog(frame, "This Course does not have dependencies");
+				}else{
+					for (int i = 0; i < grafo.returnVertex(root, textField.getText()).adjacencies.size(); i++) {
+						 req =  req + "\n " + grafo.returnVertex(root, textField.getText()).adjacencies.get(i).target.name;
+					}
+					JOptionPane.showMessageDialog(frame, req);
 				}
+				
 			}
 		});
+		
+		JButton btnRequirements = new JButton("Requirements");
+		btnRequirements.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String req = "";
+					for (int i = 0; i < grafo.requirements(root, textField.getText()).size(); i++) {
+						 req =  req + "\n " + grafo.requirements(root, textField.getText()).get(i);
+					}
+					JOptionPane.showMessageDialog(frame, req);
+				}
+			});
+		
+		JButton btnCanICourse = new JButton("Can I course ...");
+		btnCanICourse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(frame, grafo.canI(student, textField.getText(), root));
+				
+			}
+		});
+		
+		JButton btnRecomendatioForNext = new JButton("Recomendation for next Semester");
+		btnRecomendatioForNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String req = "";
+				for (int i = 0; i < grafo.nextSem(student).size(); i++) {
+					 req =  req + "\n " + grafo.nextSem(student).get(i);
+				}
+				JOptionPane.showMessageDialog(frame, req);
+				
+			}
+		});
+		
+		
+		
+		
 		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(6)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
@@ -528,72 +659,78 @@ public class Remedials {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(6)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(chckbxInglesRemedial)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(chckbxDesarrolloDeAplicaciones))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(lblNewLabel)
 										.addComponent(chckbxIntroduccinALa)
 										.addComponent(chckbxIntrouccinALas)
 										.addComponent(chckbxIntroduccinALa_1)
 										.addComponent(chckbxFundamentosDeEscritura)
 										.addComponent(chckbxInglsRemedial)
-										.addComponent(chckbxInglsRemedial_1))
-									.addGap(42)
+										.addComponent(chckbxInglsRemedial_1)
+										.addComponent(chckbxInglesRemedial)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(lblNewLabel)))
+									.addGap(25)
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(chckbxFundamentosProg)
+										.addComponent(chckbxFsica)
+										.addComponent(chckbxMatemticasDiscretas)
+										.addComponent(chckbxMatemticas)
+										.addComponent(chckbxIntroduccinALa_2)
+										.addComponent(chckbxCienciasNat)
+										.addComponent(chckbxLenguaExtranjera)
+										.addComponent(lblSemester))
+									.addGap(4)
+									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 										.addGroup(groupLayout.createSequentialGroup()
-											.addGap(6)
-											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(lblSemester_4)
+												.addComponent(chckbxSistemasOperativos)
+												.addComponent(chckbxlgebraLineal)
+												.addComponent(chckbxInterconexinDeRedes)
+												.addComponent(chckbxMatemticasComputacionales))
+											.addGap(93)
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(chckbxBasesDeDatos_1)
+												.addComponent(chckbxEvaluacinYAdministracin)
+												.addComponent(chckbxEmprendimiento)
+												.addComponent(chckbxProgramacinAvanzada)
+												.addComponent(lblSemester_5, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(chckbxAnlisisYModelacin)
+												.addComponent(chckbxHumanidadesYBellas))
+											.addGap(18)
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(chckbxCalidadYPruebas)
+												.addComponent(chckbxProyectoDeDesarrollo_1)))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(lblSemester_1)
+												.addComponent(chckbxProgramacinOrientadaA)
+												.addComponent(chckbxOrganizacinComputacional)
+												.addComponent(chckbxMatemticas_1)
+												.addComponent(chckbxFundamentosDeDiseo)
 												.addGroup(groupLayout.createSequentialGroup()
+													.addPreferredGap(ComponentPlacement.RELATED)
 													.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(chckbxFsica)
-														.addComponent(chckbxFundamentosProg)
-														.addComponent(chckbxMatemticasDiscretas)
-														.addComponent(chckbxMatemticas)
-														.addComponent(chckbxIntroduccinALa_2)
-														.addComponent(chckbxCienciasNat))
-													.addGap(108)
-													.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(chckbxProgramacinOrientadaA)
-														.addComponent(chckbxOrganizacinComputacional)
-														.addComponent(chckbxMatemticas_1)
-														.addComponent(chckbxFundamentosDeDiseo)
 														.addComponent(chckbxAdministracinEInnovacin)
-														.addComponent(chckbxAnlisisYExpresin)))
-												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(chckbxLenguaExtranjera)
-													.addGap(196)
-													.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addGroup(groupLayout.createSequentialGroup()
-															.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																.addComponent(lblSemester_4)
-																.addComponent(chckbxSistemasOperativos)
-																.addComponent(chckbxlgebraLineal)
-																.addComponent(chckbxInterconexinDeRedes)
-																.addComponent(chckbxMatemticasComputacionales)
-																.addComponent(chckbxHumanidadesYBellas))
-															.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																.addGroup(groupLayout.createSequentialGroup()
-																	.addPreferredGap(ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-																	.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																		.addComponent(chckbxBasesDeDatos_1)
-																		.addComponent(lblSemester_5)
-																		.addComponent(chckbxProgramacinAvanzada)
-																		.addComponent(chckbxEmprendimiento)
-																		.addComponent(chckbxEvaluacinYAdministracin)))
-																.addGroup(groupLayout.createSequentialGroup()
-																	.addPreferredGap(ComponentPlacement.UNRELATED)
-																	.addComponent(chckbxProyectoDeDesarrollo_1))))
-														.addGroup(groupLayout.createSequentialGroup()
-															.addComponent(chckbxAnlisisYModelacin)
-															.addPreferredGap(ComponentPlacement.RELATED)
-															.addComponent(chckbxCalidadYPruebas))))))
-										.addGroup(groupLayout.createSequentialGroup()
-											.addComponent(lblSemester)
-											.addGap(441)
-											.addComponent(lblSemester_1))))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(chckbxDesarrolloDeAplicaciones))))
+														.addComponent(chckbxAnlisisYExpresin))))
+											.addPreferredGap(ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(btnCanICourse)
+												.addComponent(btnRequirements)
+												.addComponent(btnThisIsRequirement)
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+													.addComponent(textField)
+													.addComponent(lblEnterTheKey, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+													.addComponent(btnSaveResults)
+													.addComponent(btnRecomendatioForNext))))))))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createSequentialGroup()
@@ -619,13 +756,13 @@ public class Remedials {
 							.addGap(32)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblSemester_7)
-								.addComponent(chckbxMtodosCuantitativosY)
 								.addComponent(chckbxTpicos_1)
 								.addComponent(chckbxTpicos_2)
 								.addComponent(chckbxLaboratorioDeDesarrollo)
 								.addComponent(chckbxDiseoYArquitectura)
 								.addComponent(chckbxGrficasComputacionales)
-								.addComponent(chckbxDiseoDeCompiadores))
+								.addComponent(chckbxDiseoDeCompiadores)
+								.addComponent(chckbxMtodosCuantitativosY))
 							.addGap(79)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(chckbxticaAplicada)
@@ -635,135 +772,128 @@ public class Remedials {
 								.addComponent(chckbxTpicos_4)
 								.addComponent(chckbxTpicos_3)
 								.addComponent(lblSemester_8)
-								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-									.addComponent(btnSave)
-									.addComponent(chckbxProyectoIntegradorPara)))))
-					.addContainerGap(50, Short.MAX_VALUE))
+								.addComponent(chckbxProyectoIntegradorPara))))
+					.addContainerGap(87, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(6)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel)
+					.addGap(24)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblSemester)
-						.addComponent(lblSemester_1))
-					.addGap(2)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(10)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(chckbxIntroduccinALa))
-							.addGap(6)
-							.addComponent(chckbxIntrouccinALas)
-							.addGap(6)
-							.addComponent(chckbxIntroduccinALa_1)
-							.addGap(6)
-							.addComponent(chckbxFundamentosDeEscritura)
-							.addGap(6)
-							.addComponent(chckbxInglsRemedial)
-							.addGap(6)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(chckbxInglsRemedial_1)
-								.addComponent(chckbxCienciasNat)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(10)
-							.addComponent(chckbxFundamentosProg)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(chckbxFsica)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(chckbxMatemticasDiscretas)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(chckbxMatemticas)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(chckbxIntroduccinALa_2))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(chckbxProgramacinOrientadaA)
-							.addGap(6)
-							.addComponent(chckbxOrganizacinComputacional)
-							.addGap(6)
-							.addComponent(chckbxMatemticas_1)
-							.addGap(6)
-							.addComponent(chckbxFundamentosDeDiseo)
-							.addGap(6)
-							.addComponent(chckbxAdministracinEInnovacin)
-							.addGap(6)
-							.addComponent(chckbxAnlisisYExpresin)))
+						.addComponent(lblNewLabel)
+						.addComponent(lblSemester_1)
+						.addComponent(lblEnterTheKey))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxIntroduccinALa)
+						.addComponent(chckbxFundamentosProg)
+						.addComponent(chckbxProgramacinOrientadaA)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(6)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxIntrouccinALas)
+						.addComponent(chckbxFsica)
+						.addComponent(chckbxOrganizacinComputacional)
+						.addComponent(btnThisIsRequirement))
+					.addGap(6)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxIntroduccinALa_1)
+						.addComponent(chckbxMatemticasDiscretas)
+						.addComponent(chckbxMatemticas_1)
+						.addComponent(btnRequirements))
+					.addGap(6)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxFundamentosDeEscritura)
+						.addComponent(chckbxMatemticas)
+						.addComponent(chckbxFundamentosDeDiseo)
+						.addComponent(btnCanICourse))
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(chckbxInglesRemedial)
-						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(chckbxLenguaExtranjera)
-							.addComponent(lblSemester_4)
-							.addComponent(lblSemester_5)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxInglsRemedial)
+								.addComponent(chckbxIntroduccinALa_2)
+								.addComponent(chckbxAnlisisYExpresin))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(chckbxInglsRemedial_1)
+										.addComponent(chckbxCienciasNat))
+									.addGap(6))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(chckbxAdministracinEInnovacin)
+									.addPreferredGap(ComponentPlacement.UNRELATED)))
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(chckbxInglesRemedial)
+								.addComponent(chckbxLenguaExtranjera)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(46)
+							.addComponent(btnRecomendatioForNext)))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(chckbxInglsRemedial_2)
+							.addGap(6)
+							.addComponent(chckbxInglsRemedial_3)
+							.addGap(12)
+							.addComponent(lblSemester_2)
+							.addGap(6)
+							.addComponent(chckbxEstructuraDeDatos)
+							.addGap(6)
+							.addComponent(chckbxProbabilidadYEstadstica)
+							.addGap(6)
+							.addComponent(chckbxElectricidadYMagnetismo)
+							.addGap(6)
+							.addComponent(chckbxMatemticas_2)
+							.addGap(6)
+							.addComponent(chckbxFundamentosDeIngeniera))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(20)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblSemester_3)
+								.addComponent(lblSemester_4)
+								.addComponent(lblSemester_5, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxAnlisisYDiseo)
+								.addComponent(chckbxSistemasOperativos)
+								.addComponent(chckbxProgramacinAvanzada))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxProyectoDeDesarrollo)
+								.addComponent(chckbxlgebraLineal)
+								.addComponent(chckbxEmprendimiento))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxFundamentosDeRedes)
+								.addComponent(chckbxInterconexinDeRedes)
+								.addComponent(chckbxEvaluacinYAdministracin))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxMtodosNumricosEn)
+								.addComponent(chckbxMatemticasComputacionales)
+								.addComponent(chckbxBasesDeDatos_1))
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(chckbxInglsRemedial_2)
-									.addGap(6)
-									.addComponent(chckbxInglsRemedial_3)
-									.addGap(12)
-									.addComponent(lblSemester_2)
-									.addGap(6)
-									.addComponent(chckbxEstructuraDeDatos)
-									.addGap(6)
-									.addComponent(chckbxProbabilidadYEstadstica)
-									.addGap(6)
-									.addComponent(chckbxElectricidadYMagnetismo)
-									.addGap(6)
-									.addComponent(chckbxMatemticas_2)
-									.addGap(6)
-									.addComponent(chckbxFundamentosDeIngeniera))
+									.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(chckbxBasesDeDatos)
+										.addComponent(chckbxAnlisisYModelacin))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(chckbxExpresinVerbalEn)
+										.addComponent(chckbxHumanidadesYBellas)))
 								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(20)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(lblSemester_3)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(chckbxAnlisisYDiseo)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(chckbxProyectoDeDesarrollo)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(chckbxFundamentosDeRedes)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(chckbxMtodosNumricosEn)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(chckbxBasesDeDatos)
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(chckbxExpresinVerbalEn))
-										.addGroup(groupLayout.createSequentialGroup()
-											.addGap(96)
-											.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-												.addComponent(chckbxAnlisisYModelacin)
-												.addComponent(chckbxCalidadYPruebas))
-											.addPreferredGap(ComponentPlacement.RELATED)
-											.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-												.addComponent(chckbxHumanidadesYBellas)
-												.addComponent(chckbxProyectoDeDesarrollo_1)))))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(chckbxSistemasOperativos)
+									.addComponent(chckbxProyectoDeDesarrollo_1)
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(chckbxlgebraLineal)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(chckbxInterconexinDeRedes)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(chckbxMatemticasComputacionales)))
-							.addGap(6)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(chckbxticaPersonaY)
-								.addComponent(lblSemester_7)
-								.addComponent(lblSemester_8)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(chckbxProgramacinAvanzada)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(chckbxEmprendimiento)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(chckbxEvaluacinYAdministracin)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(chckbxBasesDeDatos_1)))
+									.addComponent(chckbxCalidadYPruebas)))))
+					.addGap(6)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(chckbxticaPersonaY)
+						.addComponent(lblSemester_7)
+						.addComponent(lblSemester_8))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
@@ -803,14 +933,14 @@ public class Remedials {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(chckbxIntroduccinALa_3)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(chckbxSistemasInteligentes)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(chckbxSistemasInteligentes)
+								.addComponent(btnSaveResults))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(chckbxProyectoIntegradorPara)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(chckbxticaAplicada)))
-					.addGap(20)
-					.addComponent(btnSave)
-					.addContainerGap())
+					.addGap(49))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}
@@ -822,5 +952,4 @@ public class Remedials {
 	public List<Vertex> listaAlum(){
 		return student;
 	}
-	
 }

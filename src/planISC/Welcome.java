@@ -48,8 +48,8 @@ public class Welcome {
 		btnEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==btnEnter){
-					materia window = new materia();
-					window.frame.setVisible(false);
+					Remedials window = new Remedials();
+					window.frame.setVisible(true);
 					frame.setVisible(false);
 				}
 			}

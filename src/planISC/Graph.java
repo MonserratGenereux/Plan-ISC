@@ -149,6 +149,7 @@ public class Graph{
     }
     
     public String canI(List<Vertex> student, String subject, Vertex root){
+<<<<<<< HEAD:src/planISC/Graph.java
     	String bool="No";
 	    List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
 		boolean can = true;
@@ -156,10 +157,20 @@ public class Graph{
 		
 		for (int i = 0; i < require.size(); i++) {
 			for (int j = 0; j < student.size(); j++) {
+=======
+		String bool="No";
+    	List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
+    	boolean can = true;
+    	int cont = 0;
+    	
+    	for (int i = 0; i < require.size(); i++) {
+    		for (int j = 0; j < student.size(); j++) {
+>>>>>>> origin/master:src/planISC/Dijkstra.java
 				if(require.get(i) == student.get(j))
 					cont++;
 			}
 		}
+<<<<<<< HEAD:src/planISC/Graph.java
 		if (cont >= require.size()) {
 			bool= "You can course it";
 	
@@ -168,6 +179,16 @@ public class Graph{
 		}
 		return bool;
 	}
+=======
+    	if (cont >= require.size()) {
+			bool= "You can course it";
+			
+		}else{
+			bool="You can not course it";
+		}
+    	return bool;
+    }
+>>>>>>> origin/master:src/planISC/Dijkstra.java
     
     public List<Vertex> nextSem(List<Vertex> student){
     	
