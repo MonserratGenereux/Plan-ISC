@@ -118,8 +118,15 @@ public class Graph{
     	List<Vertex> requirements = new ArrayList<Vertex>();
         vertexQueue.add(root);
         Vertex subject = returnVertex(root, vName);
+<<<<<<< HEAD
+
         
         //Adds all the paths that ends in the vName Vertex to a List 
+
+=======
+        
+        //Adds all the paths that ends in the vName Vertex to a List 
+>>>>>>> origin/master
     	while (!vertexQueue.isEmpty()){
     		Vertex u = vertexQueue.poll();
     		if (u.adjacencies!=null) {
@@ -131,8 +138,15 @@ public class Graph{
         		}
 			}
     	}
+<<<<<<< HEAD
+
     	
     	//Remove the vertexes that can be equals in the list
+
+=======
+    	
+    	//Remove the vertexes that can be equals in the list
+>>>>>>> origin/master
     	for (int i = 0; i < requirements.size(); i++) {
 			for (int j = i+1; j < requirements.size(); j++) {
 				if (requirements.get(i)==requirements.get(j)) {
@@ -166,6 +180,10 @@ public class Graph{
      * @return bool String. Says if the vertex is or not an adjacent from one of the vertexes in student.
      */
     public String canI(List<Vertex> student, String subject, Vertex root){
+<<<<<<< HEAD
+    	//List require has the parents of the subject Vertex
+=======
+>>>>>>> origin/master
 		//Check if the List student has the necessary elements to return true
 		//The quantity of required elements depend on th e List require
     	String bool="";
@@ -194,10 +212,16 @@ public class Graph{
      * @param student First parameter. List of vertexes
      * @return adjacencies. List with the sorted elements adjacents to
      * the elements inside the student list
+<<<<<<< HEAD
+     */ 
+    public List<Vertex> nextSem(List<Vertex> student){  
+    	//Add the adjacencies of the vertexes inside the List student
+=======
      */
     	
         //Add the adjacencies of the vertexes inside the List student
     public List<Vertex> nextSem(List<Vertex> student){    	
+>>>>>>> origin/master
         List<Vertex> adjacencies = new ArrayList<Vertex>();
     	for (int i = 0; i < student.size(); i++) {
     		if(student.get(i).adjacencies!=null){
@@ -208,6 +232,10 @@ public class Graph{
     			}
     		}
 		}
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 
     	//sorts the adjacencies list
     	Collections.sort(adjacencies);
