@@ -30,6 +30,8 @@ public class Subjects {
     List<Vertex> student;
     private JTextField textField;
     Graph grafo = new Graph();
+    
+   
     public Subjects() {
         initialize();
     }
@@ -39,7 +41,7 @@ public class Subjects {
      * are the one used by the methods in the Graph class.
      * Initialize the contents of the frame.
      */
-    void initialize() {
+    public void initialize() {
         
         student = new ArrayList<Vertex>();
         
@@ -955,12 +957,6 @@ public class Subjects {
                                                .addGap(49))
                                      );
         frame.getContentPane().setLayout(groupLayout);
-    }
-    public Vertex root(){
-        return root;
-    }
-    public List<Vertex> listaAlum(){
-        return student;
     }
 
 }
