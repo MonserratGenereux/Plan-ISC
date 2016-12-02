@@ -15,14 +15,13 @@ import java.awt.Font;
 import javax.swing.JTextField;
 
 /**
- * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta.
- * @version 1.0
- * @since 2016-12-01
- * @description
  * The Subjects class implements a window where the user selects the
  * vertexes that the List student will contain.
  * Brings to the user the possibility to interact with the methods in
  * Graph class using a GUI.
+ * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta.
+ * @version 1.0
+ * @since 2016-12-01
  */
 public class Subjects {
     

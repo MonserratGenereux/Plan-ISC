@@ -1,13 +1,11 @@
 package planISC;
 
 /**
- * 
+ * The Edge Program implements edges between 
+ * vertexes using target and weight.
  * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
  * @version 1.0
  * @since 2016-12-01
- * @description
- * The Edge Program implements edges between 
- * vertexes using target and weight.
  */
 public class Edge{
 	

@@ -6,14 +6,14 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 /** 
- * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
- * @version 1.0
- * @since 2016-12-01
- * @description 
  * The Graph program implements a graph using the Vertex 
  * and Edge programs.
  * It implements some methods that are used to determine
  * paths from and to some Vertexes.
+ * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
+ * @version 1.0
+ * @since 2016-12-01
+ * 
  */
 
 public class Graph{

@@ -11,12 +11,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /**
+ * The Welcome class creates the first window in the
+ * program.
  * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
  * @version 1.0
  * @since 2016-12-01
- * @description
- * The Welcome class creates the first window in the
- * program.
  */
 public class Welcome {    
     JFrame frame;

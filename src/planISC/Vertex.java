@@ -3,13 +3,12 @@ package planISC;
 import java.util.LinkedList;
 
 /**
- * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
- * @version 1.0
- * @since 2016-12-01 
- * @description
  * The Vertex program implements the nodes that are contained in the 
  * graph. The vertex stores all the needed information for the methods 
  * in the Graph Class.
+ * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
+ * @version 1.0
+ * @since 2016-12-01 
  */
 
 public class Vertex implements Comparable<Vertex>{
