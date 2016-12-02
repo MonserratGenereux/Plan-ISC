@@ -15,7 +15,8 @@ import java.awt.EventQueue;
 public class isc {
 	
 	public static void main(String[] args) {
-		
+		Welcome window = new Welcome();
+		window.frame.setVisible(true);
 		
 	}
 }
