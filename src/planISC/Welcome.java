@@ -48,7 +48,7 @@ public class Welcome {
 		btnEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==btnEnter){
-					Remedials window = new Remedials();
+					Subjects window = new Subjects();
 					window.frame.setVisible(true);
 					frame.setVisible(false);
 				}

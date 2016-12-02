@@ -15,14 +15,14 @@ import java.util.List;
 import java.awt.Font;
 import javax.swing.JTextField;
 
-public class Remedials {
+public class Subjects {
 
 	JFrame frame;
 	Vertex root;
 	List<Vertex> student;
 	private JTextField textField;
 	Graph grafo = new Graph();
-	public Remedials() {
+	public Subjects() {
 		initialize();
 	}
 
