@@ -5,60 +5,26 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 
-class Vertex implements Comparable<Vertex>
-{
-	protected String key;
-	protected String name;                // The info in a Graph node
-	protected String info;
-	protected String status;
-	protected int semester;
-    public LinkedList<Edge> adjacencies;
-    public double minDistance = Double.POSITIVE_INFINITY;
-    public Vertex previous;
-    
-    public String toString() { 
-    	return name; 
-    }
-    
-    public int compareTo(Vertex other)
-    {
-        return Double.compare(semester, other.semester);
-    }
-	
-	public Vertex (String key, String status){
-		this.key = key;
-		this.status = status;
-	}
-	
-	//Degree Node
-	public Vertex(int semester2, String name2, String key2) {
-		// TODO Auto-generated constructor stub
-		this.key = key2;
-		this.name = name2;
-		this.semester = semester2;
-	}
-	
-	//System Node
-	public Vertex(String key, String name, String info){
-		this.key = key;
-		this.name = name;
-		this.info = info;
-	}
-}
+/** 
+ * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
+ * @version 1.0
+ * @since 2016-12-01
+ * 
+ * The Graph program implements a graph using the Vertex 
+ * and Edge programs.
+ * It implements some methods that are used to determine
+ * paths from and to some Vertexes.
+ */
 
-
-class Edge{
+public class Graph{
 	
-    public final Vertex target;
-    public final double weight;
-    
-    public Edge(Vertex argTarget, double argWeight){ 
-    	target = argTarget; 
-    	weight = argWeight; 
-    }
-}
-
-public class Dijkstra{
+	/**
+	 * This method creates an Edge from Vertex vertexInicio to Vertex vertexFinal
+	 * Use the Edge class which contains all the targets of a single Vertex
+	 * @param vertexInicio
+	 * @param vertexFinal
+	 * @param weight
+	 */
 	
 	public void addEdge(Vertex vertexInicio, Vertex vertexFinal,double weight){
 		Edge edge = new Edge(vertexFinal, weight);
@@ -71,13 +37,20 @@ public class Dijkstra{
 		}	
 	}	
 	
+	/**
+	 * This method creates the path from a Vertex suource to
+	 * all other vertexes.
+	 * This method is the one who defines the Graph.
+	 * @param source This is the Vertex source, which is the "father" of all other vertexes. 
+	 */
     public void computePaths(Vertex source){
     	
         source.minDistance = 0.;
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
         vertexQueue.add(source);
         Edge e = null;
-
+    //Assigns the previous Vertex to every vertex
+        //Use the minimun distance between vertexes
     while (!vertexQueue.isEmpty()) {
         Vertex u = vertexQueue.poll();
         if (u.adjacencies != null){
@@ -98,7 +71,14 @@ public class Dijkstra{
             }
         }
     }
-
+    
+    /**
+     * This method compares the vName with the name or key of every vertex 
+     * in the Graph to return the full vertex with all its attributes.
+     * @param root This parameter its necessary because it is the root of the Graph, here is where the travel begins. 
+     * @param vName Is the name or key of the vertex that needs to be found.
+     * @return vertexN This is the vertex that contains what is needed.
+     */
     public Vertex returnVertex(Vertex root, String vName){
 		
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
@@ -124,6 +104,12 @@ public class Dijkstra{
 		return vertexN;
     }
     
+    /**
+     * 
+     * @param root
+     * @param vName
+     * @return
+     */
     public List<Vertex> requirements(Vertex root, String vName){
     	PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
     	List<Vertex> requirements = new ArrayList<Vertex>();
@@ -162,26 +148,26 @@ public class Dijkstra{
         return path;
     }
     
-    public boolean canI(List<Vertex> student, String subject, Vertex root){
+    public String canI(List<Vertex> student, String subject, Vertex root){
+    	String bool="No";
+	    List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
+		boolean can = true;
+		int cont = 0;
 		
-    	List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
-    	boolean can = true;
-    	int cont = 0;
-    	
-    	for (int i = 0; i < require.size(); i++) {
-    		for (int j = 0; j < student.size(); j++) {
+		for (int i = 0; i < require.size(); i++) {
+			for (int j = 0; j < student.size(); j++) {
 				if(require.get(i) == student.get(j))
 					cont++;
 			}
 		}
-    	if (cont >= require.size()) {
-			can = true;
+		if (cont >= require.size()) {
+			bool= "You can course it";
+	
 		}else{
-			can = false;
+			bool="You can not course it";
 		}
-    	System.out.println(can);
-    	return can;
-    }
+		return bool;
+	}
     
     public List<Vertex> nextSem(List<Vertex> student){
     	
