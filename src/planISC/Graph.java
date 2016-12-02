@@ -41,7 +41,7 @@ public class Graph{
 	 * This method creates the path from a Vertex source to
 	 * all other vertexes.
 	 * This method is the one who defines the Graph.
-	 * @param Source This is the Vertex source, which is the "father" of all other vertexes. 
+	 * @param source This is the Vertex source, which is the "father" of all other vertexes. 
 	 */
 	public void computePaths(Vertex source){
 
