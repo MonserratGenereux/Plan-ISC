@@ -118,11 +118,8 @@ public class Graph{
     	List<Vertex> requirements = new ArrayList<Vertex>();
         vertexQueue.add(root);
         Vertex subject = returnVertex(root, vName);
-<<<<<<< HEAD
         
         //Adds all the paths that ends in the vName Vertex to a List 
-=======
->>>>>>> origin/master
     	while (!vertexQueue.isEmpty()){
     		Vertex u = vertexQueue.poll();
     		if (u.adjacencies!=null) {
@@ -134,11 +131,8 @@ public class Graph{
         		}
 			}
     	}
-<<<<<<< HEAD
     	
     	//Remove the vertexes that can be equals in the list
-=======
->>>>>>> origin/master
     	for (int i = 0; i < requirements.size(); i++) {
 			for (int j = i+1; j < requirements.size(); j++) {
 				if (requirements.get(i)==requirements.get(j)) {
@@ -172,19 +166,11 @@ public class Graph{
      * @return bool String. Says if the vertex is or not an adjacent from one of the vertexes in student.
      */
     public String canI(List<Vertex> student, String subject, Vertex root){
-<<<<<<< HEAD
-    	String bool="No";
-    	//List require has the parents of the subject Vertex
-	    List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
-		int cont = 0;
-    	
 		//Check if the List student has the necessary elements to return true
 		//The quantity of required elements depend on th e List require
-=======
     	String bool="";
 	    List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
 		int cont = 0;
->>>>>>> origin/master
     	for (int i = 0; i < require.size(); i++) {
     		for (int j = 0; j < student.size(); j++) {
 				if(require.get(i) == student.get(j))
@@ -200,7 +186,6 @@ public class Graph{
 		return bool;
 	}
     
-<<<<<<< HEAD
     /**
      * This method is used to get a list of vertexes that
      * are the next dependents from the vertexes inside of the 
@@ -210,15 +195,10 @@ public class Graph{
      * @return adjacencies. List with the sorted elements adjacents to
      * the elements inside the student list
      */
-    public List<Vertex> nextSem(List<Vertex> student){
-    	
-        List<Vertex> adjacencies = new ArrayList<Vertex>();
     	
         //Add the adjacencies of the vertexes inside the List student
-=======
     public List<Vertex> nextSem(List<Vertex> student){    	
         List<Vertex> adjacencies = new ArrayList<Vertex>();
->>>>>>> origin/master
     	for (int i = 0; i < student.size(); i++) {
     		if(student.get(i).adjacencies!=null){
     			for (int j = 0; j < student.get(i).adjacencies.size(); j++) {
@@ -228,11 +208,8 @@ public class Graph{
     			}
     		}
 		}
-<<<<<<< HEAD
 
     	//sorts the adjacencies list
-=======
->>>>>>> origin/master
     	Collections.sort(adjacencies);
     	for (int i = adjacencies.size()-1; i >= 6; i--) {
 			adjacencies.remove(i);
