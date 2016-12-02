@@ -7,17 +7,12 @@ import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import javax.swing.JLabel;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.awt.Font;
-
 import javax.swing.JTextField;
 
 public class Remedials {
@@ -26,7 +21,7 @@ public class Remedials {
 	Vertex root;
 	List<Vertex> student;
 	private JTextField textField;
-	Dijkstra grafo = new Dijkstra();
+	Graph grafo = new Graph();
 	public Remedials() {
 		initialize();
 	}
@@ -35,7 +30,7 @@ public class Remedials {
 	 * Initialize the contents of the frame.
 	 */
 	void initialize() {
-		Dijkstra degree = new Dijkstra();
+		
 		student = new ArrayList<Vertex>();
 		
 
@@ -122,81 +117,81 @@ public class Remedials {
 		Vertex DVA2015 = new Vertex(7,"Tópicos 6","VA2015");
 		
 		//Edges from root to semester 0
-		degree.addEdge(root, DTC1001, 0);
-		degree.addEdge(root, DF1001, 0);
-		degree.addEdge(root, DMA1001, 0);
-		degree.addEdge(root, DH1015, 0);
-		degree.addEdge(root, DH1001, 0);
-		degree.addEdge(root, DTC1023, 0);
-		degree.addEdge(root, DDS1003, 0);
-		degree.addEdge(root, DTC1019, 0);
-		degree.addEdge(root, DTC2019, 0);
-		degree.addEdge(root, DAD1005, 0);
-		degree.addEdge(root, DEM1005, 0);
-		degree.addEdge(root, DHS2005, 0);
-		degree.addEdge(root, DTC2007, 0);
-		degree.addEdge(root, DTI2011, 0);
-		degree.addEdge(root, DTI3035, 0);
-		degree.addEdge(root, DHS2006, 0);
-		degree.addEdge(root, DVA2010, 0);
-		degree.addEdge(root, DVA2011, 0);
-		degree.addEdge(root, DVA2012, 0);
-		degree.addEdge(root, DVA2013, 0);
-		degree.addEdge(root, DVA2014, 0);
-		degree.addEdge(root, DVA2015, 0);
+		grafo.addEdge(root, DTC1001, 0);
+		grafo.addEdge(root, DF1001, 0);
+		grafo.addEdge(root, DMA1001, 0);
+		grafo.addEdge(root, DH1015, 0);
+		grafo.addEdge(root, DH1001, 0);
+		grafo.addEdge(root, DTC1023, 0);
+		grafo.addEdge(root, DDS1003, 0);
+		grafo.addEdge(root, DTC1019, 0);
+		grafo.addEdge(root, DTC2019, 0);
+		grafo.addEdge(root, DAD1005, 0);
+		grafo.addEdge(root, DEM1005, 0);
+		grafo.addEdge(root, DHS2005, 0);
+		grafo.addEdge(root, DTC2007, 0);
+		grafo.addEdge(root, DTI2011, 0);
+		grafo.addEdge(root, DTI3035, 0);
+		grafo.addEdge(root, DHS2006, 0);
+		grafo.addEdge(root, DVA2010, 0);
+		grafo.addEdge(root, DVA2011, 0);
+		grafo.addEdge(root, DVA2012, 0);
+		grafo.addEdge(root, DVA2013, 0);
+		grafo.addEdge(root, DVA2014, 0);
+		grafo.addEdge(root, DVA2015, 0);
 		
 		
 		//Edges between nodes in degree graph
-		degree.addEdge(DTC1001, DTC1014, 0);
-		degree.addEdge(DF1001, DF1002, 0);
-		degree.addEdge(DMA1001, DTC1003, 0);
-		degree.addEdge(DMA1001, DMA1015, 0);
-		degree.addEdge(DH1015, DH1040, 0);
-		degree.addEdge(DH1001, DH1002, 0);
-		degree.addEdge(DH1002, DH1003, 0);
-		degree.addEdge(DH1003, DH1004, 0);
-		degree.addEdge(DH1004, DH1005, 0);
-		degree.addEdge(DH1005, DH1016, 0);
-		degree.addEdge(DTC1014, DTC2016, 0);
-		degree.addEdge(DTC1014, DTC1016, 0);
-		degree.addEdge(DTC1014, DTC1015, 0);
-		degree.addEdge(DF1002, DF1005, 0);
-		degree.addEdge(DMA1015, DMA1017, 0);
-		degree.addEdge(DTC2016, DTC1018, 0);
-		degree.addEdge(DTC1016, DTC2008, 0);
-		degree.addEdge(DMA1017, DMA1019, 0);
-		degree.addEdge(DTC1016, DTC2018, 0);
-		degree.addEdge(DMA1017, DMA1006, 0);
-		degree.addEdge(DMA1017, DF1005, 0);
-		degree.addEdge(DMA1017, DMA2009, 0);
-		degree.addEdge(DH1040, DH1018, 0);
-		degree.addEdge(DH1040, DH2001, 0);
-		degree.addEdge(DH1040, DHS2000, 0);
-		degree.addEdge(DTC1018, DTC2017, 0);
-		degree.addEdge(DTC1018, DTC1021, 0);
-		degree.addEdge(DTC1018, DTC2020, 0);
-		degree.addEdge(DTC1019, DTC1020, 0);
-		degree.addEdge(DTC2017, DTC3022, 0);
-		degree.addEdge(DTC2017, DTC2025, 0);
-		degree.addEdge(DTC2018, DTC2027, 0);
-		degree.addEdge(DTC2018, DTC2022, 0);
-		degree.addEdge(DTC1020, DTC3041, 0);
-		degree.addEdge(DTC1020, DTC2004, 0);
-		degree.addEdge(DTC2008, DTC2025, 0);
-		degree.addEdge(DTC2008, DTC2027, 0);
-		degree.addEdge(DTC2022, DTC2026, 0);
-		degree.addEdge(DTC2020, DTC2006, 0);
-		degree.addEdge(DTC2004, DTC3002, 0);
-		degree.addEdge(DTC2004, DTC2024, 0);
-		degree.addEdge(DTC2004, DTC3045, 0);
-		degree.addEdge(DTC2004, DTC3049, 0);
-		degree.addEdge(DTI2011, DTC3002, 0);
-		degree.addEdge(DTC2024, DTC3054, 0);
-		degree.addEdge(DTC2026, DTC3052, 0);
-		degree.addEdge(DTC2006, DTC2011, 0);
-		degree.addEdge(DTC2006, DTC3048, 0);
+		grafo.addEdge(DTC1001, DTC1014, 0);
+		grafo.addEdge(DF1001, DF1002, 0);
+		grafo.addEdge(DMA1001, DTC1003, 0);
+		grafo.addEdge(DMA1001, DMA1015, 0);
+		grafo.addEdge(DH1015, DH1040, 0);
+		grafo.addEdge(DH1001, DH1002, 0);
+		grafo.addEdge(DH1002, DH1003, 0);
+		grafo.addEdge(DH1003, DH1004, 0);
+		grafo.addEdge(DH1004, DH1005, 0);
+		grafo.addEdge(DH1005, DH1016, 0);
+		grafo.addEdge(DTC1014, DTC2016, 0);
+		grafo.addEdge(DTC1014, DTC1016, 0);
+		grafo.addEdge(DTC1014, DTC1015, 0);
+		grafo.addEdge(DF1002, DF1005, 0);
+		grafo.addEdge(DMA1015, DMA1017, 0);
+		grafo.addEdge(DTC2016, DTC1018, 0);
+		grafo.addEdge(DTC1016, DTC2008, 0);
+		grafo.addEdge(DMA1017, DMA1019, 0);
+		grafo.addEdge(DTC1016, DTC2018, 0);
+		grafo.addEdge(DMA1017, DMA1006, 0);
+		grafo.addEdge(DMA1017, DF1005, 0);
+		grafo.addEdge(DMA1017, DMA2009, 0);
+		grafo.addEdge(DH1040, DH1018, 0);
+		grafo.addEdge(DH1040, DH2001, 0);
+		grafo.addEdge(DH1040, DHS2000, 0);
+		grafo.addEdge(DTC1018, DTC2017, 0);
+		grafo.addEdge(DTC1018, DTC1021, 0);
+		grafo.addEdge(DTC1018, DTC2020, 0);
+		grafo.addEdge(DTC1019, DTC1020, 0);
+		grafo.addEdge(DTC2017, DTC3022, 0);
+		grafo.addEdge(DTC2017, DTC2025, 0);
+		grafo.addEdge(DTC2018, DTC2027, 0);
+		grafo.addEdge(DTC2018, DTC2022, 0);
+		grafo.addEdge(DTC1020, DTC3041, 0);
+		grafo.addEdge(DTC1020, DTC2004, 0);
+		grafo.addEdge(DTC2008, DTC2025, 0);
+		grafo.addEdge(DTC2008, DTC2027, 0);
+		grafo.addEdge(DTC2022, DTC2026, 0);
+		grafo.addEdge(DTC2020, DTC2006, 0);
+		grafo.addEdge(DTC2004, DTC3002, 0);
+		grafo.addEdge(DTC2004, DTC2024, 0);
+		grafo.addEdge(DTC2004, DTC3045, 0);
+		grafo.addEdge(DTC2004, DTC3049, 0);
+		grafo.addEdge(DTI2011, DTC3002, 0);
+		grafo.addEdge(DTC2024, DTC3054, 0);
+		grafo.addEdge(DTC2026, DTC3052, 0);
+		grafo.addEdge(DTC2006, DTC2011, 0);
+		grafo.addEdge(DTC2006, DTC3048, 0);
 
-		degree.computePaths(root); //"Crea" las conexiones en el árbol
+		grafo.computePaths(root); //"Crea" las conexiones en el árbol
 		
 		student.add(root);
 		frame = new JFrame();
@@ -398,7 +393,7 @@ public class Remedials {
 				JCheckBox chckbxLaboratorioDeDesarrollo = new JCheckBox("Laboratorio de Desarrollo de Aplicaciones Web");
 				chckbxLaboratorioDeDesarrollo.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
-				JCheckBox chckbxDiseoDeCompiadores = new JCheckBox("Diseño de Compiadores");
+				JCheckBox chckbxDiseoDeCompiadores = new JCheckBox("Diseño de Compiladores");
 				chckbxDiseoDeCompiadores.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 				
 				JCheckBox chckbxDiseoYArquitectura = new JCheckBox("Diseño y Arquitectura de Software");
@@ -435,162 +430,168 @@ public class Remedials {
 				btnSaveResults.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if(e.getSource()==btnSaveResults)
-							if(chckbxIntroduccinALa.isSelected()==true){
+							student.clear();
+							student.add(root);
+							
+							if(chckbxIntroduccinALa.isSelected()==true && !student.contains(DTC1001)){	
 								student.add(DTC1001);
-							}if(chckbxIntroduccinALa_1.isSelected()==true){
+							}if(chckbxIntroduccinALa_1.isSelected()==true && !student.contains(DF1001)){
 								student.add(DF1001);
-							}if(chckbxIntrouccinALas.isSelected()==true){
+							}if(chckbxIntrouccinALas.isSelected()==true && !student.contains(DMA1001)){
 								student.add(DMA1001);
-							}if(chckbxInglesRemedial.isSelected()==true){
+							}if(chckbxInglesRemedial.isSelected()==true && !student.contains(DH1001)){
 								student.add(DH1001);
-							}if(chckbxInglsRemedial_1.isSelected()==true){
+							}if(chckbxInglsRemedial_1.isSelected()==true && !student.contains(DH1002)){
 								student.add(DH1002);
-							}if(chckbxInglesRemedial .isSelected()==true){
+							}if(chckbxInglesRemedial .isSelected()==true && !student.contains(DH1003)){
 								student.add(DH1003);
-							}if(chckbxInglsRemedial_2.isSelected()==true){
+							}if(chckbxInglsRemedial_2.isSelected()==true && !student.contains(DH1004)){
 								student.add(DH1004);
-							}if(chckbxInglsRemedial_3.isSelected()==true){
+							}if(chckbxInglsRemedial_3.isSelected()==true && !student.contains(DH1005)){
 								student.add(DH1005);
-							}if(chckbxFundamentosDeEscritura.isSelected()==true){
+							}if(chckbxFundamentosDeEscritura.isSelected()==true && !student.contains(DH1015)){
 								student.add(DH1015);
-							}if(chckbxFundamentosProg.isSelected()==true){
+							}if(chckbxFundamentosProg.isSelected()==true && !student.contains(DTC1014)){
 								student.add(DTC1014);
-							}if(chckbxFsica.isSelected()==true){
+							}if(chckbxFsica.isSelected()==true && !student.contains(DF1002)){
 								student.add(DF1002);
-							}if(chckbxMatemticasDiscretas.isSelected()==true){
+							}if(chckbxMatemticasDiscretas.isSelected()==true && !student.contains(DTC1003)){
 								student.add(DTC1003);
-							}if(chckbxMatemticas.isSelected()==true){
+							}if(chckbxMatemticas.isSelected()==true && !student.contains(DMA1015)){
 								student.add(DMA1015);
-							}if(chckbxIntroduccinALa_2.isSelected()==true){
+							}if(chckbxIntroduccinALa_2.isSelected()==true && !student.contains(DTC1023)){
 								student.add(DTC1023);
-							}if(chckbxCienciasNat.isSelected()==true){
+							}if(chckbxCienciasNat.isSelected()==true && !student.contains(DDS1003)){
 								student.add(DDS1003);
-							}if(chckbxLenguaExtranjera.isSelected()==true){
+							}if(chckbxLenguaExtranjera.isSelected()==true && !student.contains(DH1016)){
 								student.add(DH1016);
-							}if(chckbxProgramacinOrientadaA.isSelected()==true){
+							}if(chckbxProgramacinOrientadaA.isSelected()==true && !student.contains(DTC2016)){
 								student.add(DTC2016);
-							}if(chckbxOrganizacinComputacional.isSelected()==true){
+							}if(chckbxOrganizacinComputacional.isSelected()==true && !student.contains(DTC1016)){
 								student.add(DTC1016);
-							}if(chckbxMatemticas_1.isSelected()==true){
+							}if(chckbxMatemticas_1.isSelected()==true && !student.contains(DMA1017)){
 								student.add(DMA1017);
-							}if(chckbxFundamentosDeDiseo.isSelected()==true){
+							}if(chckbxFundamentosDeDiseo.isSelected()==true && !student.contains(DTC1015)){
 								student.add(DTC1015);
-							}if(chckbxAdministracinEInnovacin.isSelected()==true){
+							}if(chckbxAdministracinEInnovacin.isSelected()==true && !student.contains(DAD1005)){
 								student.add(DAD1005);
-							}if(chckbxAnlisisYExpresin.isSelected()==true){
+							}if(chckbxAnlisisYExpresin.isSelected()==true && !student.contains(DH1040)){
 								student.add(DH1040);
-							}if(chckbxEstructuraDeDatos.isSelected()==true){
+							}if(chckbxEstructuraDeDatos.isSelected()==true && !student.contains(DTC1018)){
 								student.add(DTC1018);
-							}if(chckbxProbabilidadYEstadstica.isSelected()==true){
+							}if(chckbxProbabilidadYEstadstica.isSelected()==true && !student.contains(DMA1006)){
 								student.add(DMA1006);
-							}if(chckbxElectricidadYMagnetismo.isSelected()==true){
+							}if(chckbxElectricidadYMagnetismo.isSelected()==true && !student.contains(DF1005)){
 								student.add(DF1005);
-							}if(chckbxMatemticas_2.isSelected()==true){
+							}if(chckbxMatemticas_2.isSelected()==true && !student.contains(DMA2009)){
 								student.add(DMA2009);
-							}if(chckbxFundamentosDeIngeniera.isSelected()==true){
+							}if(chckbxFundamentosDeIngeniera.isSelected()==true && !student.contains(DTC1019)){
 								student.add(DTC1019);
-							}if(chckbxticaPersonaY.isSelected()==true){
+							}if(chckbxticaPersonaY.isSelected()==true && !student.contains(DH1018)){
 								student.add(DH1018);
-							}if(chckbxAnlisisYDiseo.isSelected()==true){
+							}if(chckbxAnlisisYDiseo.isSelected()==true && !student.contains(DTC2017)){
 								student.add(DTC2017);
-							}if(chckbxProyectoDeDesarrollo.isSelected()==true){
+							}if(chckbxProyectoDeDesarrollo.isSelected()==true && !student.contains(DTC1021)){
 								student.add(DTC1021);
-							}if(chckbxFundamentosDeRedes.isSelected()==true){
+							}if(chckbxFundamentosDeRedes.isSelected()==true && !student.contains(DTC2018)){
 								student.add(DTC2018);
-							}if(chckbxMtodosNumricosEn.isSelected()==true){
+							}if(chckbxMtodosNumricosEn.isSelected()==true && !student.contains(DTC2019)){
 								student.add(DTC2019);
-							}if(chckbxBasesDeDatos.isSelected()==true){
+							}if(chckbxBasesDeDatos.isSelected()==true && !student.contains(DTC1020)){
 								student.add(DTC1020);
-							}if(chckbxExpresinVerbalEn.isSelected()==true){
+							}if(chckbxExpresinVerbalEn.isSelected()==true && !student.contains(DH2001)){
 								student.add(DH2001);
-							}if(chckbxSistemasOperativos.isSelected()==true){
+							}if(chckbxSistemasOperativos.isSelected()==true && !student.contains(DTC2008)){
 								student.add(DTC2008);
-							}if(chckbxlgebraLineal.isSelected()==true){
+							}if(chckbxlgebraLineal.isSelected()==true && !student.contains(DMA1019)){
 								student.add(DMA1019);
-							}if(chckbxInterconexinDeRedes.isSelected()==true){
+							}if(chckbxInterconexinDeRedes.isSelected()==true && !student.contains(DTC2022)){
 								student.add(DTC2022);
-							}if(chckbxMatemticasComputacionales.isSelected()==true){
+							}if(chckbxMatemticasComputacionales.isSelected()==true && !student.contains(DTC2020)){
 								student.add(DTC2020);
-							}if(chckbxAnlisisYModelacin.isSelected()==true){
+							}if(chckbxAnlisisYModelacin.isSelected()==true && !student.contains(DTC2004)){
 								student.add(DTC2004);
-							}if(chckbxHumanidadesYBellas.isSelected()==true){
+							}if(chckbxHumanidadesYBellas.isSelected()==true && !student.contains(DHS2000)){
 								student.add(DHS2000);
-							}if(chckbxProgramacinAvanzada.isSelected()==true){
+							}if(chckbxProgramacinAvanzada.isSelected()==true && !student.contains(DTC2025)){
 								student.add(DTC2025);
-							}if(chckbxEmprendimiento.isSelected()==true){
+							}if(chckbxEmprendimiento.isSelected()==true && !student.contains(DEM1005)){
 								student.add(DEM1005);
-							}if(chckbxEvaluacinYAdministracin.isSelected()==true){
+							}if(chckbxEvaluacinYAdministracin.isSelected()==true && !student.contains(DTI2011)){
 								student.add(DTI2011);
-							}if(chckbxBasesDeDatos_1.isSelected()==true){
+							}if(chckbxBasesDeDatos_1.isSelected()==true && !student.contains(DTC3041)){
 								student.add(DTC3041);
-							}if(chckbxProyectoDeDesarrollo_1.isSelected()==true){
+							}if(chckbxProyectoDeDesarrollo_1.isSelected()==true && !student.contains(DTC2024)){
 								student.add(DTC2024);
-							}if(chckbxCalidadYPruebas.isSelected()==true){
+							}if(chckbxCalidadYPruebas.isSelected()==true && !student.contains(DTC3045)){
 								student.add(DTC3045);
-							}if(chckbxTpicos.isSelected()==true){
+							}if(chckbxTpicos.isSelected()==true && !student.contains(DVA2010)){
 								student.add(DVA2010);
-							}if(chckbxSeguridadInformtica.isSelected()==true){
+							}if(chckbxSeguridadInformtica.isSelected()==true && !student.contains(DTC2027)){
 								student.add(DTC2027);
-							}if(chckbxAdministracinDeProyectos.isSelected()==true){
+							}if(chckbxAdministracinDeProyectos.isSelected()==true && !student.contains(DTC3002)){
 								student.add(DTC3002);
-							}if(chckbxDesarrolloDeAplicaciones.isSelected()==true){
+							}if(chckbxDesarrolloDeAplicaciones.isSelected()==true && !student.contains(DTC2026)){
 								student.add(DTC2026);
-							}if(chckbxLenguajesDeProgramacin.isSelected()==true){
+							}if(chckbxLenguajesDeProgramacin.isSelected()==true && !student.contains(DTC2006)){
 								student.add(DTC2006);
-							}if(chckbxCiudadania.isSelected()==true){
+							}if(chckbxCiudadania.isSelected()==true && !student.contains(DHS2005)){
 								student.add(DHS2005);
-							}if(chckbxGrficasComputacionales.isSelected()==true){
+							}if(chckbxGrficasComputacionales.isSelected()==true && !student.contains(DTC3022)){
 								student.add(DTC3022);
-							}if(chckbxMtodosCuantitativosY.isSelected()==true){
+							}if(chckbxMtodosCuantitativosY.isSelected()==true && !student.contains(DTC2007)){
 								student.add(DTC2007);
-							}if(chckbxTpicos_1.isSelected()==true){
+							}if(chckbxTpicos_1.isSelected()==true && !student.contains(DVA2011)){
 								student.add(DVA2011);
-							}if(chckbxLaboratorioDeDesarrollo.isSelected()==true){
+							}if(chckbxLaboratorioDeDesarrollo.isSelected()==true && !student.contains(DTC3052)){
 								student.add(DTC3052);
-							}if(chckbxDiseoDeCompiadores.isSelected()==true){
+							}if(chckbxDiseoDeCompiadores.isSelected()==true && !student.contains(DTC3048)){
 								student.add(DTC3048);
-							}if(chckbxDiseoYArquitectura.isSelected()==true){
+							}if(chckbxDiseoYArquitectura.isSelected()==true && !student.contains(DTC3049)){
 								student.add(DTC3049);
-							}if(chckbxTpicos_2.isSelected()==true){
+							}if(chckbxTpicos_2.isSelected()==true && !student.contains(DVA2012)){
 								student.add(DVA2012);
-							}if(chckbxTpicos_3.isSelected()==true){
+							}if(chckbxTpicos_3.isSelected()==true && !student.contains(DVA2013)){
 								student.add(DVA2013);
-							}if(chckbxTpicos_4.isSelected()==true){
+							}if(chckbxTpicos_4.isSelected()==true && !student.contains(DVA2014)){
 								student.add(DVA2014);
-							}if(chckbxTpicos_5.isSelected()==true){
+							}if(chckbxTpicos_5.isSelected()==true && !student.contains(DVA2015)){
 								student.add(DVA2015);
-							}if(chckbxIntroduccinALa_3.isSelected()==true){
+							}if(chckbxIntroduccinALa_3.isSelected()==true && !student.contains(DTI3035)){
 								student.add(DTI3035);
-							}if(chckbxSistemasInteligentes.isSelected()==true){
+							}if(chckbxSistemasInteligentes.isSelected()==true && !student.contains(DTC2011)){
 								student.add(DTC2011);
-							}if(chckbxProyectoIntegradorPara.isSelected()==true){
+							}if(chckbxProyectoIntegradorPara.isSelected()==true && !student.contains(DTC3054)){
 								student.add(DTC3054);
-							}if(chckbxticaAplicada.isSelected()==true){
+							}if(chckbxticaAplicada.isSelected()==true && !student.contains(DHS2006)){
 								student.add(DHS2006);
 							}
 					}
 				});
-				
-							
-				
-				
 		
 		JLabel lblEnterTheKey = new JLabel("Enter the key or name of the subject:");
 		
 		textField = new JTextField();
 		textField.setColumns(10);
 		
+		textField.setText("");
+		
 		JButton btnThisIsRequirement = new JButton("This is Requirement for course ...");
 		btnThisIsRequirement.addActionListener(new ActionListener() {
 			String req = "";
 			public void actionPerformed(ActionEvent e) {
-				if(grafo.returnVertex(root, textField.getText()).adjacencies==null){
-					JOptionPane.showMessageDialog(frame, "This Course does not have dependencies");
+				if(textField.getText().equals("")){
+					JOptionPane.showMessageDialog(frame, "Enter a Subject");
 				}else{
-					for (int i = 0; i < grafo.returnVertex(root, textField.getText()).adjacencies.size(); i++) {
-						 req =  req + "\n " + grafo.returnVertex(root, textField.getText()).adjacencies.get(i).target.name;
+					if(grafo.returnVertex(root, textField.getText()).adjacencies==null){
+						JOptionPane.showMessageDialog(frame, "This Course does not have dependencies");
+					}else{
+						for (int i = 0; i < grafo.returnVertex(root, textField.getText()).adjacencies.size(); i++) {
+							 req =  req + "\n " + grafo.returnVertex(root, textField.getText()).adjacencies.get(i).target.name;
+						}
+						JOptionPane.showMessageDialog(frame, req);
+					
 					}
-					JOptionPane.showMessageDialog(frame, req);
 				}
 				
 			}
@@ -600,18 +601,25 @@ public class Remedials {
 		btnRequirements.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String req = "";
+				if(textField.getText().equals("")){
+					JOptionPane.showMessageDialog(frame, "Enter a Subject");
+				}else{
 					for (int i = 0; i < grafo.requirements(root, textField.getText()).size(); i++) {
 						 req =  req + "\n " + grafo.requirements(root, textField.getText()).get(i);
 					}
 					JOptionPane.showMessageDialog(frame, req);
 				}
+				}
 			});
 		
 		JButton btnCanICourse = new JButton("Can I course ...");
 		btnCanICourse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(frame, grafo.canI(student, textField.getText(), root));
-				
+			public void actionPerformed(ActionEvent e) {				
+				if(textField.getText().equals("")){
+					JOptionPane.showMessageDialog(frame, "Enter a Subject");
+				}else{
+					JOptionPane.showMessageDialog(frame, grafo.canI(student, textField.getText(), root));
+				}
 			}
 		});
 		
@@ -626,10 +634,6 @@ public class Remedials {
 				
 			}
 		});
-		
-		
-		
-		
 		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
@@ -944,8 +948,6 @@ public class Remedials {
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}
-
-	
 	public Vertex root(){
 		return root;
 	}

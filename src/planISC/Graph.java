@@ -38,7 +38,7 @@ public class Graph{
 	}	
 	
 	/**
-	 * This method creates the path from a Vertex suource to
+	 * This method creates the path from a Vertex source to
 	 * all other vertexes.
 	 * This method is the one who defines the Graph.
 	 * @param source This is the Vertex source, which is the "father" of all other vertexes. 
@@ -115,7 +115,6 @@ public class Graph{
     	List<Vertex> requirements = new ArrayList<Vertex>();
         vertexQueue.add(root);
         Vertex subject = returnVertex(root, vName);
-        
     	while (!vertexQueue.isEmpty()){
     		Vertex u = vertexQueue.poll();
     		if (u.adjacencies!=null) {
@@ -127,7 +126,6 @@ public class Graph{
         		}
 			}
     	}
-    	
     	for (int i = 0; i < requirements.size(); i++) {
 			for (int j = i+1; j < requirements.size(); j++) {
 				if (requirements.get(i)==requirements.get(j)) {
@@ -135,7 +133,6 @@ public class Graph{
 				}
 			}
 		}
-    	
 		return requirements;
     }
     
@@ -143,16 +140,14 @@ public class Graph{
         List<Vertex> path = new ArrayList<Vertex>();
         for (Vertex vertex = target; vertex != null; vertex = vertex.previous)
             path.add(vertex);
-
         Collections.reverse(path);
         return path;
     }
     
     public String canI(List<Vertex> student, String subject, Vertex root){
-    	String bool="No";
+    	String bool="";
 	    List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
 		int cont = 0;
-    	
     	for (int i = 0; i < require.size(); i++) {
     		for (int j = 0; j < student.size(); j++) {
 				if(require.get(i) == student.get(j))
@@ -168,10 +163,8 @@ public class Graph{
 		return bool;
 	}
     
-    public List<Vertex> nextSem(List<Vertex> student){
-    	
+    public List<Vertex> nextSem(List<Vertex> student){    	
         List<Vertex> adjacencies = new ArrayList<Vertex>();
-    	
     	for (int i = 0; i < student.size(); i++) {
     		if(student.get(i).adjacencies!=null){
     			for (int j = 0; j < student.get(i).adjacencies.size(); j++) {
@@ -181,12 +174,10 @@ public class Graph{
     			}
     		}
 		}
-
     	Collections.sort(adjacencies);
     	for (int i = adjacencies.size()-1; i >= 6; i--) {
 			adjacencies.remove(i);
 		}
-
     	return adjacencies;
     }
 }
