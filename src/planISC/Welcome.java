@@ -12,6 +12,9 @@ import java.awt.event.ActionEvent;
 
 /**
  * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
+ * @version 1.0
+ * @since 2016-12-01
+ * @description
  * The Welcome class creates the first window in the
  * program.
  */
