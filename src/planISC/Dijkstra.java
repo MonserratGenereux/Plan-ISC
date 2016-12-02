@@ -162,8 +162,8 @@ public class Dijkstra{
         return path;
     }
     
-    public boolean canI(List<Vertex> student, String subject, Vertex root){
-		
+    public String canI(List<Vertex> student, String subject, Vertex root){
+		String bool="No";
     	List<Vertex> require = getShortestPathTo(returnVertex(root, subject).previous);
     	boolean can = true;
     	int cont = 0;
@@ -175,12 +175,12 @@ public class Dijkstra{
 			}
 		}
     	if (cont >= require.size()) {
-			can = true;
+			bool= "You can course it";
+			
 		}else{
-			can = false;
+			bool="You can not course it";
 		}
-    	System.out.println(can);
-    	return can;
+    	return bool;
     }
     
     public List<Vertex> nextSem(List<Vertex> student){
