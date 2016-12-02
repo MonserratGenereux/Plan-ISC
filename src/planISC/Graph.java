@@ -41,7 +41,7 @@ public class Graph{
 	 * This method creates the path from a Vertex source to
 	 * all other vertexes.
 	 * This method is the one who defines the Graph.
-	 * @param First parameter. Source This is the Vertex source, which is the "father" of all other vertexes. 
+	 * @param Source This is the Vertex source, which is the "father" of all other vertexes. 
 	 */
     public void computePaths(Vertex source){
     	
@@ -75,8 +75,8 @@ public class Graph{
     /**
      * This method compares the vName with the name or key of every vertex 
      * in the Graph to return the full vertex with all its attributes.
-     * @param root This parameter its necessary because it is the root of the Graph, here is where the travel begins. 
-     * @param vName Is the name or key of the vertex that needs to be found.
+     * @param root First parameter. This parameter its necessary because it is the root of the Graph, here is where the travel begins. 
+     * @param vName Second parameter. Is the name or key of the vertex that needs to be found.
      * @return vertexN This is the vertex that contains what is needed.
      */
     public Vertex returnVertex(Vertex root, String vName){
@@ -109,8 +109,8 @@ public class Graph{
      * This method is used to get a path with all the parents of
      * the vName node which compares the vNname
      * with the name or key of all nodes.
-     * @param root This is the root of all the Grpah.
-     * @param vName This is the vertex which is used to get the path 
+     * @param root First parameter. This is the root of all the Grpah.
+     * @param vName Second parameter. This is the vertex which is used to get the path 
      * @return requirements A List that contains all parents of the vName Vertex.
      */
     public List<Vertex> requirements(Vertex root, String vName){

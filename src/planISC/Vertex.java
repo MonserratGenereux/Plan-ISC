@@ -2,6 +2,16 @@ package planISC;
 
 import java.util.LinkedList;
 
+/**
+ * @author Ilse Monserrat Sánchez Genereux and Mark Octavio Rivera Acosta
+ * @version 1.0
+ * @since 2016-12-01 
+ * 
+ * The Vertex program implements the nodes that are contained in the 
+ * graph. The vertex stores all the needed information for the methods 
+ * in the Graph Class.
+ */
+
 public class Vertex implements Comparable<Vertex>{
 	
 	//The info in the Vertex
@@ -14,24 +24,32 @@ public class Vertex implements Comparable<Vertex>{
     public double minDistance = Double.POSITIVE_INFINITY;
     public Vertex previous;
     
+    /**
+     * @return name. Is the name of the Vertex which is unique.
+     */
     public String toString() { 
     	return name; 
     }
-    //Compare method used to order the subjects by its semester
+    
+   /**
+    * @param other. This is the Vertex to compare to.
+    * This method compares the semester attribute from one Vertex
+    * to another.
+    */
     public int compareTo(Vertex other){
         return Double.compare(semester, other.semester);
     }
 	
-	public Vertex (String key, String status){
-		this.key = key;
-		this.status = status;
-	}
-	
-	//Degree Node
-	public Vertex(int semester2, String name2, String key2){
+    /**
+     * Constructor method
+     * @param semester This is the first parameter. Sets the semester value to the Vertex
+     * @param name This is the second parameter. Sets the name value to the Vertex
+     * @param key This is the third parameter. Sets the key value to the Vertex
+     */
+	public Vertex(int semester, String name, String key){
 		// TODO Auto-generated constructor stub
-		this.key = key2;
-		this.name = name2;
-		this.semester = semester2;
+		this.key = key;
+		this.name = name;
+		this.semester = semester;
 	}
 }
